@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros // Filosofía, Red Neuronal y Núcleo Técnico - Bridged Loop</title>
+    <meta name="description"
+        content="Conoce la filosofía, arquitectura de equipo y el núcleo técnico detrás de Bridged Loop Creative Design & Web.">
+
+    <!-- Google Fonts Oficiales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos del Sistema -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Canvas de Grilla Cyberpunk Dinámica a 60 FPS -->
+    <canvas id="cyber-canvas"></canvas>
+    <div class="scanlines-overlay"></div>
+
+    <!-- 1. Floating HUD Navbar -->
+    <header class="hud-navbar" id="hud-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <div class="brand-logo-wrapper">
+                    <img src="media/logooficial.png" alt="Bridged Loop Logo" class="brand-logo-img">
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li class="nav-item"><a href="index.html" class="glitch-hover">Inicio</a></li>
+                    <li class="nav-item"><a href="nosotros.html" class="active glitch-hover">Nosotros</a></li>
+                    <li class="nav-item"><a href="portafolio.html" class="glitch-hover">Portafolio</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="glitch-hover">Contáctanos</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="badge-hud">
+                    <span class="status-dot"></span>
+                    <span>SYSTEM ONLINE // LATENCY: <strong class="hud-latency">14ms</strong></span>
+                </div>
+                <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary">
+                    [ CONTACTANOS ]
+                </a>
+                <button class="mobile-toggle" aria-label="Abrir menú">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Main Wrapper -->
+    <main class="main-wrapper">
+
+        <!-- Hero / Intro Nosotros -->
+        <section class="section hero-section" style="min-height: auto; padding-top: 3rem; padding-bottom: 2rem;">
+            <div class="container text-center" style="max-width: 900px; text-align: center;">
+                <span class="section-tag">IDENTIDAD // DIRECTIVA PRIMARIA</span>
+                <h1 class="hero-title scramble-text" data-scramble="NÚCLEO TÉCNICO Y RED NEURONAL">
+                    NÚCLEO TÉCNICO Y RED NEURONAL
+                </h1>
+                <p class="hero-subtitle" style="margin: 0 auto;">
+                    En Bridged Loop no solo programamos sitios web: diseñamos ecosistemas interactivos de alta
+                    frecuencia donde el arte digital converge con la ingeniería de sistemas distribuidos.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección de Filosofía & Valores -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">CÓDIGO DE HONOR</span>
+                    <h2 class="section-title scramble-text" data-scramble="FILOSOFÍA DE DESARROLLO">
+                        FILOSOFÍA DE DESARROLLO
+                    </h2>
+                    <p class="section-desc">
+                        Nuestros 3 pilares axiomáticos para la creación de experiencias digitales sin fricción.
+                    </p>
+                </div>
+
+                <div class="cyber-grid reveal-stagger">
+                    <article class="cyber-card">
+                        <div class="card-inner">
+                            <div class="card-icon">01</div>
+                            <h3 class="card-title font-orbitron">LATENCIA CERO Y FLUIDEZ A 60 FPS</h3>
+                            <p class="card-desc">
+                                Cada interacción debe sentirse instantánea. Optimizamos el render pipeline del navegador
+                                para asegurar 60 cuadros por segundo continuos sin comprometer la riqueza visual.
+                            </p>
+                            <div class="card-footer">
+                                <span>AXIOMA_01</span>
+                                <span style="color: var(--cyan-neon);">GPU-FIRST</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="cyber-card">
+                        <div class="card-inner">
+                            <div class="card-icon">02</div>
+                            <h3 class="card-title font-orbitron">ESTÉTICA CYBERPUNK RADICAL</h3>
+                            <p class="card-desc">
+                                Rechazamos las plantillas minimalistas genéricas y aburridas. Diseñamos con carácter:
+                                contrastes cinematográficos, HUDs tácticos, tipografías futuristas y micro-detalles
+                                vivos.
+                            </p>
+                            <div class="card-footer">
+                                <span>AXIOMA_02</span>
+                                <span style="color: var(--cyan-neon);">PURE_CYBER</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="cyber-card">
+                        <div class="card-inner">
+                            <div class="card-icon">03</div>
+                            <h3 class="card-title font-orbitron">ARQUITECTURA DE CÓDIGO ESCALABLE</h3>
+                            <p class="card-desc">
+                                Estructuración modular basada en componentes desacoplados, código limpio, tipado
+                                estricto y pruebas automatizadas que soportan millones de peticiones concurrentes.
+                            </p>
+                            <div class="card-footer">
+                                <span>AXIOMA_03</span>
+                                <span style="color: var(--cyan-neon);">HIGH_SCALE</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evolución de la Red (Timeline / Núcleo) -->
+        <section class="section"
+            style="background: rgba(16, 20, 23, 0.5); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">HISTORIAL DE DEPLOYMENT</span>
+                    <h2 class="section-title scramble-text" data-scramble="EVOLUCIÓN DEL NÚCLEO">
+                        EVOLUCIÓN DEL NÚCLEO
+                    </h2>
+                    <p class="section-desc">
+                        Cronología de hitos y desarrollo de nuestros motores de renderizado.
+                    </p>
+                </div>
+
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="timeline-module reveal-stagger">
+
+                        <div class="timeline-node">
+                            <div class="timeline-tag">FASE 01 // 2024</div>
+                            <h3 class="font-orbitron" style="font-size: 1.25rem; margin-bottom: 0.4rem;">GÉNESIS DE
+                                BRIDGED LOOP</h3>
+                            <p style="opacity: 0.85;">
+                                Creación del laboratorio creativo y desarrollo de los primeros prototipos de
+                                microinteracciones fluidas y layouts HUD basados en CSS Grid y WebGL.
+                            </p>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="timeline-tag">FASE 02 // 2025</div>
+                            <h3 class="font-orbitron" style="font-size: 1.25rem; margin-bottom: 0.4rem;">EXPANSIÓN DE
+                                RED NEURONAL WEB</h3>
+                            <p style="opacity: 0.85;">
+                                Integración de Web Audio API para feedback háptico/acústico, librerías de descifrado de
+                                texto y pipelines de renderizado a 60 FPS sin caídas de frame.
+                            </p>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="timeline-tag">FASE 03 // 2026</div>
+                            <h3 class="font-orbitron" style="font-size: 1.25rem; margin-bottom: 0.4rem;">ECOSISTEMA
+                                CYBERPUNK v4.0.8</h3>
+                            <p style="opacity: 0.85;">
+                                Lanzamiento de la suite interactiva completa: Terminal CLI, Tilt 3D adaptativo,
+                                telemetría HUD en tiempo real y arquitectura para clientes de alto nivel.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nodos del Equipo / Red Neuronal Humana -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">NODOS NEURALES</span>
+                    <h2 class="section-title scramble-text" data-scramble="ARQUITECTOS DEL SISTEMA">
+                        ARQUITECTOS DEL SISTEMA
+                    </h2>
+                    <p class="section-desc">
+                        Especialistas multidisciplinarios que hacen posible cada despliegue de alta tecnología.
+                    </p>
+                </div>
+
+                <div class="team-node-grid reveal-stagger">
+
+                    <div class="team-card">
+                        <div class="team-avatar-wrapper">
+                            <div class="team-avatar"
+                                style="display: flex; align-items: center; justify-content: center; font-family: var(--font-orbitron); color: var(--cyan-neon); font-size: 1.8rem;">
+                                BL-01
+                            </div>
+                        </div>
+                        <div class="team-role">LEAD CYBER ARCHITECT</div>
+                        <h3 class="team-name font-orbitron">ALEJANDRO A.</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.85; margin-bottom: 1rem;">
+                            Especialista en arquitectura Fullstack, WebGL y microinteracciones de alto rendimiento para
+                            plataformas críticas.
+                        </p>
+                        <div class="badge-hud" style="justify-content: center;">
+                            <span>SYNC RATE: 99.8%</span>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-avatar-wrapper">
+                            <div class="team-avatar"
+                                style="display: flex; align-items: center; justify-content: center; font-family: var(--font-orbitron); color: var(--accent-steel); font-size: 1.8rem;">
+                                BL-02
+                            </div>
+                        </div>
+                        <div class="team-role">UI/UX HUD DESIGNER</div>
+                        <h3 class="team-name font-orbitron">VALERIA K.</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.85; margin-bottom: 1rem;">
+                            Diseñadora de sistemas futuristas, glassmorphism, tipografía táctica y composición cromática
+                            Cyberpunk.
+                        </p>
+                        <div class="badge-hud" style="justify-content: center;">
+                            <span>SYNC RATE: 98.9%</span>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-avatar-wrapper">
+                            <div class="team-avatar"
+                                style="display: flex; align-items: center; justify-content: center; font-family: var(--font-orbitron); color: var(--accent-rgb-green); font-size: 1.8rem;">
+                                BL-03
+                            </div>
+                        </div>
+                        <div class="team-role">SECURITY & PERFORMANCE ENGINEER</div>
+                        <h3 class="team-name font-orbitron">MARCUS R.</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.85; margin-bottom: 1rem;">
+                            Ingeniero en optimización de GPU, latencia de red, protocolos de cifrado y ciberseguridad
+                            Web.
+                        </p>
+                        <div class="badge-hud" style="justify-content: center;">
+                            <span>SYNC RATE: 99.5%</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 3. Footer Global -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand-title">BRIDGED<span>LOOP</span></div>
+                    <p>
+                        Creative Design & Web. Transformando paradigmas digitales mediante código limpio, estética
+                        cyberpunk y microinteracciones de alta fidelidad.
+                    </p>
+                    <div class="badge-hud" style="display: inline-flex;">
+                        <span class="status-dot"></span>
+                        <span>SYSTEM MATRIX: V4.0.8 // ONLINE</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">NAVEGACIÓN</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">» Inicio</a></li>
+                        <li><a href="nosotros.html">» Nosotros</a></li>
+                        <li><a href="portafolio.html">» Portafolio</a></li>
+                        <li><a href="contacto.html">» Terminal Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">MÓDULOS</h4>
+                    <ul class="footer-links">
+                        <li><a href="portafolio.html">» UI/UX Cyberpunk</a></li>
+                        <li><a href="portafolio.html">» WebGL & 60 FPS</a></li>
+                        <li><a href="portafolio.html">» Arquitectura Web3</a></li>
+                        <li><a href="portafolio.html">» Telemetría HUD</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">CANALES SEGUROS</h4>
+                    <ul class="footer-links">
+                        <li><span style="color: var(--accent-steel);">CLI:</span> <code
+                                style="color: var(--cyan-neon);">ssh terminal@bridgedloop.dev</code></li>
+                        <li><span style="color: var(--accent-steel);">STATUS:</span> OPERATIONAL</li>
+                        <li><span style="color: var(--accent-steel);">LATENCIA:</span> 14ms (OPTIMAL)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 BRIDGED LOOP CREATIVE DESIGN & WEB. TODOS LOS PROTOCOLOS RESERVADOS.</div>
+                <div>ESTILO CYBERPUNK // DESARROLLADO A 60 FPS</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP & ScrollTrigger Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Script Modular -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>

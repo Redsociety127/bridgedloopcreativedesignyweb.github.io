@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio // Galería de Despliegues & Métricas - Bridged Loop</title>
+    <meta name="description"
+        content="Explora nuestras aplicaciones web futuristas, dashboards HUD, arquitecturas Web3 y plataformas de alto rendimiento.">
+
+    <!-- Google Fonts Oficiales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos del Sistema -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Canvas de Grilla Cyberpunk Dinámica a 60 FPS -->
+    <canvas id="cyber-canvas"></canvas>
+    <div class="scanlines-overlay"></div>
+
+    <!-- 1. Floating HUD Navbar -->
+    <header class="hud-navbar" id="hud-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <div class="brand-logo-wrapper">
+                    <img src="media/logooficial.png" alt="Bridged Loop Logo" class="brand-logo-img">
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li class="nav-item"><a href="index.html" class="glitch-hover">Inicio</a></li>
+                    <li class="nav-item"><a href="nosotros.html" class="glitch-hover">Nosotros</a></li>
+                    <li class="nav-item"><a href="portafolio.html" class="active glitch-hover">Portafolio</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="glitch-hover">Contáctanos</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="badge-hud">
+                    <span class="status-dot"></span>
+                    <span>SYSTEM ONLINE // LATENCY: <strong class="hud-latency">14ms</strong></span>
+                </div>
+                <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary">
+                    [ CONTACTANOS ]
+                </a>
+                <button class="mobile-toggle" aria-label="Abrir menú">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Main Wrapper -->
+    <main class="main-wrapper">
+
+        <!-- Hero / Intro Portafolio -->
+        <section class="section hero-section" style="min-height: auto; padding-top: 3rem; padding-bottom: 2rem;">
+            <div class="container text-center" style="max-width: 900px; text-align: center;">
+                <span class="section-tag">DESPLIEGUES DE PRODUCCIÓN</span>
+                <h1 class="hero-title scramble-text" data-scramble="GALERÍA DE PROYECTOS & TELEMETRÍA">
+                    GALERÍA DE PROYECTOS & TELEMETRÍA
+                </h1>
+                <p class="hero-subtitle" style="margin: 0 auto;">
+                    Nuestra selección de sistemas web, interfaces tácticas y aplicaciones interactivas operando en
+                    entornos reales con métricas auditadas.
+                </p>
+            </div>
+        </section>
+
+        <!-- Filtros de Proyectos -->
+        <section class="section" style="padding-top: 1rem;">
+            <div class="container">
+
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">[ TODOS LOS SISTEMAS ]</button>
+                    <button class="filter-btn" data-filter="web3">[ WEB3 & CRIPTO ]</button>
+                    <button class="filter-btn" data-filter="hud">[ HUD & DASHBOARDS ]</button>
+                    <button class="filter-btn" data-filter="security">[ CIBERSEGURIDAD ]</button>
+                </div>
+
+                <!-- Grid de Proyectos -->
+                <div class="cyber-grid reveal-stagger" id="portfolio-grid">
+
+                    <!-- Proyecto 1: HUD & Dashboards -->
+                    <article class="project-card" data-category="hud">
+                        <div class="project-thumb-wrapper">
+                            <img src="media/project1.jpg" alt="TERRA//NET Architecture Dashboard"
+                                class="project-thumb glitch-hover">
+                            <span class="project-overlay-badge">LIVE DEMO</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category">HUD & DASHBOARDS // WEBGL</div>
+                            <h3 class="project-title font-orbitron">TERRA//NET TACTICAL HUD</h3>
+                            <p class="project-desc">
+                                Dashboard de telemetría geoespacial con renderizado de nodos 3D en tiempo real,
+                                monitoreo de ancho de banda y enlaces cognitivos.
+                            </p>
+
+                            <div class="project-metrics-grid">
+                                <div class="metric-box">
+                                    <span class="metric-key">FPS</span>
+                                    <span class="metric-val" style="color: var(--accent-rgb-green);">60.0</span>
+                                </div>
+                                <div class="metric-box">
+                                    <span class="metric-key">RENDER</span>
+                                    <span class="metric-val" style="color: var(--cyan-neon);">2.4ms</span>
+                                </div>
+                                <div class="metric-box">
+                                    <span class="metric-key">SEGURIDAD</span>
+                                    <span class="metric-val">A+</span>
+                                </div>
+                            </div>
+
+                            <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary"
+                                style="margin-top: auto;">
+                                [ VER ESPECIFICACIONES ]
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 2: Web3 / Neural -->
+                    <article class="project-card" data-category="web3">
+                        <div class="project-thumb-wrapper">
+                            <img src="media/project2.jpg" alt="SYNAPSE AI Web3 Mesh" class="project-thumb glitch-hover">
+                            <span class="project-overlay-badge">MAINNET</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category">WEB3 & CRIPTO // NEURAL MESH</div>
+                            <h3 class="project-title font-orbitron">SYNAPSE AI DECENTRALIZED</h3>
+                            <p class="project-desc">
+                                Plataforma descentralizada de computación neuronal con visualizador de topología
+                                cerebral de nodos y contratos inteligentes auditados.
+                            </p>
+
+                            <div class="project-metrics-grid">
+                                <div class="metric-box">
+                                    <span class="metric-key">TPS</span>
+                                    <span class="metric-val" style="color: var(--accent-rgb-green);">12,400</span>
+                                </div>
+                                <div class="metric-box">
+                                    <span class="metric-key">UPTIME</span>
+                                    <span class="metric-val" style="color: var(--cyan-neon);">99.99%</span>
+                                </div>
+                                <div class="metric-box">
+                                    <span class="metric-key">NODOS</span>
+                                    <span class="metric-val">1,248</span>
+                                </div>
+                            </div>
+
+                            <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary"
+                                style="margin-top: auto;">
+                                [ VER ESPECIFICACIONES ]
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 3: Security & Terminal -->
+                    <article class="project-card" data-category="security">
+                        <div class="project-thumb-wrapper">
+                            <img src="media/project3.jpg" alt="AEGIS CYBER RADAR" class="project-thumb glitch-hover">
+                            <span class="project-overlay-badge">DEFENSE v2</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category">CIBERSEGURIDAD // ZERO TRUST</div>
+                            <h3 class="project-title font-orbitron">AEGIS CYBER RADAR CLI</h3>
+                            <p class="project-desc">
+                                Sistema de detección de intrusiones con interfaz holográfica, radar de paquetes anómalos
+                                y firewall perimetral automatizado.
+                            </p>
+
+                            <div class="project-metrics-grid">
+                                <div class="metric-box">
+                                    <span class="metric-key">BLOQUEO</span>
+                                    <span class="metric-val" style="color: var(--accent-rgb-green);">99.98%</span>
+                                </div>
+                                <div class="metric-box">
+                                    <span class="metric-key">ANÁLISIS</span>
+                                    <span class="metric-val" style="color: var(--cyan-neon);">&lt; 1ms</span>
+                                </div>
+                                <div class="metric-box">
+                                    <span class="metric-key">NIVEL</span>
+                                    <span class="metric-val">MIL-SPEC</span>
+                                </div>
+                            </div>
+
+                            <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary"
+                                style="margin-top: auto;">
+                                [ VER ESPECIFICACIONES ]
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Métricas Globales del Portafolio -->
+        <section class="section" style="background: rgba(16, 20, 23, 0.4); border-top: 1px solid var(--border-subtle);">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 2rem;">
+                    <span class="section-tag">TELEMETRÍA AGREGADA</span>
+                    <h2 class="section-title scramble-text" data-scramble="DESEMPEÑO HISTÓRICO DE PROYECTOS">
+                        DESEMPEÑO HISTÓRICO DE PROYECTOS
+                    </h2>
+                </div>
+
+                <div class="stats-matrix-grid reveal-stagger">
+                    <div class="stat-matrix-card">
+                        <div class="stat-matrix-number counter-val" data-target="45" data-suffix="+">0+</div>
+                        <div class="stat-matrix-label">PROYECTOS ENTREGADOS</div>
+                    </div>
+                    <div class="stat-matrix-card">
+                        <div class="stat-matrix-number counter-val" data-target="0.0" data-suffix="ms"
+                            data-prefix="< 1">0ms</div>
+                        <div class="stat-matrix-label">FRAME DROPS REPORTADOS</div>
+                    </div>
+                    <div class="stat-matrix-card">
+                        <div class="stat-matrix-number counter-val" data-target="100" data-suffix="%">0%</div>
+                        <div class="stat-matrix-label">COMPATIBILIDAD GPU</div>
+                    </div>
+                    <div class="stat-matrix-card">
+                        <div class="stat-matrix-number counter-val" data-target="24" data-suffix="/7">0/7</div>
+                        <div class="stat-matrix-label">TELEMETRÍA EN VIVO</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 3. Footer Global -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand-title">BRIDGED<span>LOOP</span></div>
+                    <p>
+                        Creative Design & Web. Transformando paradigmas digitales mediante código limpio, estética
+                        cyberpunk y microinteracciones de alta fidelidad.
+                    </p>
+                    <div class="badge-hud" style="display: inline-flex;">
+                        <span class="status-dot"></span>
+                        <span>SYSTEM MATRIX: V4.0.8 // ONLINE</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">NAVEGACIÓN</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">» Inicio</a></li>
+                        <li><a href="nosotros.html">» Nosotros</a></li>
+                        <li><a href="portafolio.html">» Portafolio</a></li>
+                        <li><a href="contacto.html">» Terminal Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">MÓDULOS</h4>
+                    <ul class="footer-links">
+                        <li><a href="portafolio.html">» UI/UX Cyberpunk</a></li>
+                        <li><a href="portafolio.html">» WebGL & 60 FPS</a></li>
+                        <li><a href="portafolio.html">» Arquitectura Web3</a></li>
+                        <li><a href="portafolio.html">» Telemetría HUD</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">CANALES SEGUROS</h4>
+                    <ul class="footer-links">
+                        <li><span style="color: var(--accent-steel);">CLI:</span> <code
+                                style="color: var(--cyan-neon);">ssh terminal@bridgedloop.dev</code></li>
+                        <li><span style="color: var(--accent-steel);">STATUS:</span> OPERATIONAL</li>
+                        <li><span style="color: var(--accent-steel);">LATENCIA:</span> 14ms (OPTIMAL)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 BRIDGED LOOP CREATIVE DESIGN & WEB. TODOS LOS PROTOCOLOS RESERVADOS.</div>
+                <div>ESTILO CYBERPUNK // DESARROLLADO A 60 FPS</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP & ScrollTrigger Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Script Modular -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio // Galería de Despliegues & Métricas - Bridged Loop</title>
+    <title>Portafolio // Casos de Éxito y Despliegues Técnicos - Bridged Loop</title>
     <meta name="description"
-        content="Explora nuestras aplicaciones web futuristas, dashboards HUD, arquitecturas Web3 y plataformas de alto rendimiento.">
+        content="Explora nuestros casos de éxito en desarrollo de landing pages de alta conversión, diseño de identidad corporativa y optimización de infraestructura web.">
 
     <!-- Google Fonts Oficiales -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,11 +17,172 @@
 
     <!-- Estilos del Sistema -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Configuración de Fondo y Acentos Verde Neón para portafolio.html -->
+    <style>
+        :root {
+            --bg-main: #181f23;
+            --cyan-neon: #00ff66;
+            /* Sustitución de acentos por Verde Neón */
+            --cyan-glow: rgba(0, 255, 102, 0.45);
+            --cyan-dim: rgba(0, 255, 102, 0.18);
+            --border-active: rgba(0, 255, 102, 0.8);
+            --glow-shadow: 0 0 25px rgba(0, 255, 102, 0.35);
+        }
+
+        body {
+            background-color: #181f23;
+            background-image:
+                radial-gradient(circle at 50% 0%, rgba(0, 255, 102, 0.14) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(116, 139, 145, 0.10) 0%, transparent 50%);
+        }
+
+        /* Resplandor y Acentos Verde Neón sobre fondo #181f23 */
+        .hero-title,
+        h1,
+        h2,
+        .section-title {
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(0, 255, 102, 0.45);
+        }
+
+        .hero-subtitle,
+        .section-desc {
+            color: #c1d1cf;
+        }
+
+        .section-tag {
+            color: #00ff66 !important;
+            background: rgba(0, 255, 102, 0.1) !important;
+            border-left: 3px solid #00ff66 !important;
+        }
+
+        /* Botones de Filtro en Verde Neón */
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #00ff66 !important;
+            color: #101417 !important;
+            border-color: #00ff66 !important;
+            box-shadow: 0 0 18px rgba(0, 255, 102, 0.45) !important;
+        }
+
+        /* Tarjetas de Proyectos y Badges */
+        .project-card:hover {
+            border-color: #00ff66 !important;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 255, 102, 0.3) !important;
+        }
+
+        .project-overlay-badge {
+            background: rgba(16, 20, 23, 0.9) !important;
+            border: 1px solid #00ff66 !important;
+            color: #00ff66 !important;
+        }
+
+        .cyber-btn-primary {
+            background: linear-gradient(135deg, rgba(0, 255, 102, 0.28) 0%, rgba(116, 139, 145, 0.3) 100%) !important;
+            border-color: #00ff66 !important;
+            box-shadow: 0 0 18px rgba(0, 255, 102, 0.35) !important;
+        }
+
+        .cyber-btn-primary:hover {
+            background: #00ff66 !important;
+            color: #101417 !important;
+            font-weight: 800 !important;
+            box-shadow: 0 0 32px #00ff66 !important;
+        }
+
+        .cyber-btn:hover {
+            border-color: #00ff66 !important;
+            background: rgba(0, 255, 102, 0.15) !important;
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.35) !important;
+        }
+
+        .nav-brand:hover .brand-logo-img {
+            filter: drop-shadow(0 0 12px #00ff66) drop-shadow(0 0 20px rgba(0, 255, 102, 0.5)) !important;
+        }
+
+        .nav-item a::after {
+            background: #00ff66 !important;
+            box-shadow: 0 0 8px #00ff66 !important;
+        }
+
+        .nav-item a:hover,
+        .nav-item a.active {
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.6) !important;
+        }
+
+        .brand-title span {
+            color: #00ff66 !important;
+        }
+
+        .scramble-char {
+            color: #00ff66 !important;
+            text-shadow: 0 0 8px #00ff66 !important;
+        }
+
+        ::selection {
+            background: #00ff66 !important;
+            color: #101417 !important;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00ff66 !important;
+            box-shadow: 0 0 10px #00ff66 !important;
+        }
+
+        .stat-matrix-card::before {
+            background: linear-gradient(90deg, transparent, #00ff66, transparent) !important;
+        }
+
+        /* Estilos para Hero Video Top en portafolio.html */
+        .hero-portfolio-section {
+            position: relative;
+            overflow: hidden;
+            padding: 4.5rem 1.5rem 3.5rem 1.5rem !important;
+            min-height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hero-video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.38) contrast(1.2) saturate(1.15);
+            pointer-events: none;
+        }
+
+        .hero-video-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(24, 31, 35, 0.85) 0%, rgba(16, 20, 23, 0.55) 50%, rgba(24, 31, 35, 0.95) 100%),
+                radial-gradient(circle at 50% 50%, rgba(0, 255, 102, 0.12) 0%, transparent 70%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-portfolio-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Canvas de Grilla Cyberpunk Dinámica a 60 FPS -->
+    <!-- Canvas de Grilla Dinámica a 60 FPS -->
     <canvas id="cyber-canvas"></canvas>
     <div class="scanlines-overlay"></div>
 
@@ -39,17 +200,17 @@
                     <li class="nav-item"><a href="index.html" class="glitch-hover">Inicio</a></li>
                     <li class="nav-item"><a href="nosotros.html" class="glitch-hover">Nosotros</a></li>
                     <li class="nav-item"><a href="portafolio.html" class="active glitch-hover">Portafolio</a></li>
-                    <li class="nav-item"><a href="contacto.html" class="glitch-hover">Contáctanos</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="glitch-hover">Contacto</a></li>
                 </ul>
             </nav>
 
             <div class="nav-actions">
                 <div class="badge-hud">
                     <span class="status-dot"></span>
-                    <span>SYSTEM ONLINE // LATENCY: <strong class="hud-latency">14ms</strong></span>
+                    <span>INFRAESTRUCTURA ACTIVA // LATENCIA: <strong class="hud-latency">14ms</strong></span>
                 </div>
                 <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary">
-                    [ CONTACTANOS ]
+                    [ SOLICITAR PROPUESTA ]
                 </a>
                 <button class="mobile-toggle" aria-label="Abrir menú">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -65,16 +226,21 @@
     <!-- 2. Main Wrapper -->
     <main class="main-wrapper">
 
-        <!-- Hero / Intro Portafolio -->
-        <section class="section hero-section" style="min-height: auto; padding-top: 3rem; padding-bottom: 2rem;">
-            <div class="container text-center" style="max-width: 900px; text-align: center;">
-                <span class="section-tag">DESPLIEGUES DE PRODUCCIÓN</span>
-                <h1 class="hero-title scramble-text" data-scramble="GALERÍA DE PROYECTOS & TELEMETRÍA">
-                    GALERÍA DE PROYECTOS & TELEMETRÍA
+        <!-- Hero / Intro Portafolio con Video Top en Bucle -->
+        <section class="section hero-portfolio-section">
+            <video class="hero-video-bg" autoplay muted loop playsinline poster="media/project2.jpg">
+                <source src="media/Designingbrand.mp4" type="video/mp4">
+                Tu navegador no soporta video HTML5.
+            </video>
+            <div class="hero-video-overlay"></div>
+            <div class="container hero-portfolio-content">
+                <span class="section-tag" style="margin-bottom: 1rem;">CASOS DE ÉXITO // PROYECTOS VERIFICADOS</span>
+                <h1 class="hero-title scramble-text" data-scramble="REGISTRO DE PROYECTOS &amp; MÉTRICAS CRO">
+                    REGISTRO DE PROYECTOS &amp; MÉTRICAS CRO
                 </h1>
-                <p class="hero-subtitle" style="margin: 0 auto;">
-                    Nuestra selección de sistemas web, interfaces tácticas y aplicaciones interactivas operando en
-                    entornos reales con métricas auditadas.
+                <p class="hero-subtitle" style="margin: 0 auto; max-width: 750px;">
+                    Nuestra selección de landing pages de alta conversión, sistemas de identidad corporativa e
+                    infraestructura web optimizada con resultados comerciales comprobados.
                 </p>
             </div>
         </section>
@@ -84,120 +250,123 @@
             <div class="container">
 
                 <div class="portfolio-filters">
-                    <button class="filter-btn active" data-filter="all">[ TODOS LOS SISTEMAS ]</button>
-                    <button class="filter-btn" data-filter="web3">[ WEB3 & CRIPTO ]</button>
-                    <button class="filter-btn" data-filter="hud">[ HUD & DASHBOARDS ]</button>
-                    <button class="filter-btn" data-filter="security">[ CIBERSEGURIDAD ]</button>
+                    <button class="filter-btn active" data-filter="all">[ TODOS LOS PROYECTOS ]</button>
+                    <button class="filter-btn" data-filter="landing">[ LANDING PAGES CRO ]</button>
+                    <button class="filter-btn" data-filter="branding">[ IDENTIDAD CORPORATIVA ]</button>
+                    <button class="filter-btn" data-filter="infrastructure">[ INFRAESTRUCTURA &amp; REDISEÑO ]</button>
                 </div>
 
                 <!-- Grid de Proyectos -->
                 <div class="cyber-grid reveal-stagger" id="portfolio-grid">
 
-                    <!-- Proyecto 1: HUD & Dashboards -->
-                    <article class="project-card" data-category="hud">
+                    <!-- Proyecto 1: Landing Page B2B -->
+                    <article class="project-card" data-category="landing">
                         <div class="project-thumb-wrapper">
-                            <img src="media/project1.jpg" alt="TERRA//NET Architecture Dashboard"
+                            <img src="media/project1.jpg" alt="TERRA//NET B2B Landing Page"
                                 class="project-thumb glitch-hover">
-                            <span class="project-overlay-badge">LIVE DEMO</span>
+                            <span class="project-overlay-badge">PRODUCCIÓN</span>
                         </div>
                         <div class="project-body">
-                            <div class="project-category">HUD & DASHBOARDS // WEBGL</div>
-                            <h3 class="project-title font-orbitron">TERRA//NET TACTICAL HUD</h3>
+                            <div class="project-category">LANDING PAGE B2B // CRO &amp; LEADS</div>
+                            <h3 class="project-title font-orbitron">TERRA//NET PLATAFORMA B2B</h3>
                             <p class="project-desc">
-                                Dashboard de telemetría geoespacial con renderizado de nodos 3D en tiempo real,
-                                monitoreo de ancho de banda y enlaces cognitivos.
+                                Landing page de captura de leads calificados para empresa SaaS empresarial, optimizada
+                                para pauta en Google Ads y Meta Ads con conexión directa a CRM y WhatsApp.
                             </p>
 
                             <div class="project-metrics-grid">
                                 <div class="metric-box">
-                                    <span class="metric-key">FPS</span>
-                                    <span class="metric-val" style="color: var(--accent-rgb-green);">60.0</span>
+                                    <span class="metric-key">CARGA</span>
+                                    <span class="metric-val" style="color: var(--accent-rgb-green);">0.8s</span>
                                 </div>
                                 <div class="metric-box">
-                                    <span class="metric-key">RENDER</span>
-                                    <span class="metric-val" style="color: var(--cyan-neon);">2.4ms</span>
+                                    <span class="metric-key">CONVERSIÓN</span>
+                                    <span class="metric-val" style="color: var(--cyan-neon);">+52%</span>
                                 </div>
                                 <div class="metric-box">
-                                    <span class="metric-key">SEGURIDAD</span>
-                                    <span class="metric-val">A+</span>
+                                    <span class="metric-key">CORE VITALS</span>
+                                    <span class="metric-val">99/100</span>
                                 </div>
                             </div>
 
                             <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary"
                                 style="margin-top: auto;">
-                                [ VER ESPECIFICACIONES ]
+                                [ SOLICITAR PROYECTO SIMILAR ]
                             </a>
                         </div>
                     </article>
 
-                    <!-- Proyecto 2: Web3 / Neural -->
-                    <article class="project-card" data-category="web3">
+                    <!-- Proyecto 2: Identidad Corporativa -->
+                    <article class="project-card" data-category="branding">
                         <div class="project-thumb-wrapper">
-                            <img src="media/project2.jpg" alt="SYNAPSE AI Web3 Mesh" class="project-thumb glitch-hover">
-                            <span class="project-overlay-badge">MAINNET</span>
+                            <img src="media/project2.jpg" alt="SYNAPSE Identidad de Marca"
+                                class="project-thumb glitch-hover">
+                            <span class="project-overlay-badge">SISTEMA COMPLETO</span>
                         </div>
                         <div class="project-body">
-                            <div class="project-category">WEB3 & CRIPTO // NEURAL MESH</div>
-                            <h3 class="project-title font-orbitron">SYNAPSE AI DECENTRALIZED</h3>
+                            <div class="project-category">IDENTIDAD VISUAL // BRANDING CORPORATIVO</div>
+                            <h3 class="project-title font-orbitron">SYNAPSE CORP IDENTIDAD GLOBAL</h3>
                             <p class="project-desc">
-                                Plataforma descentralizada de computación neuronal con visualizador de topología
-                                cerebral de nodos y contratos inteligentes auditados.
+                                Construcción de logotipo vectorial, manual normativo de identidad corporativa, sistema
+                                tipográfico y aplicaciones para productos físicos y plataformas digitales de alta
+                                dirección.
                             </p>
 
                             <div class="project-metrics-grid">
                                 <div class="metric-box">
-                                    <span class="metric-key">TPS</span>
-                                    <span class="metric-val" style="color: var(--accent-rgb-green);">12,400</span>
+                                    <span class="metric-key">FORMATOS</span>
+                                    <span class="metric-val" style="color: var(--accent-rgb-green);">VECTORIAL</span>
                                 </div>
                                 <div class="metric-box">
-                                    <span class="metric-key">UPTIME</span>
-                                    <span class="metric-val" style="color: var(--cyan-neon);">99.99%</span>
+                                    <span class="metric-key">AUTORIDAD</span>
+                                    <span class="metric-val" style="color: var(--cyan-neon);">PREMIUM</span>
                                 </div>
                                 <div class="metric-box">
-                                    <span class="metric-key">NODOS</span>
-                                    <span class="metric-val">1,248</span>
+                                    <span class="metric-key">MANUAL</span>
+                                    <span class="metric-val">100% NORMATIVO</span>
                                 </div>
                             </div>
 
                             <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary"
                                 style="margin-top: auto;">
-                                [ VER ESPECIFICACIONES ]
+                                [ SOLICITAR PROYECTO SIMILAR ]
                             </a>
                         </div>
                     </article>
 
-                    <!-- Proyecto 3: Security & Terminal -->
-                    <article class="project-card" data-category="security">
+                    <!-- Proyecto 3: Rediseño & Optimización -->
+                    <article class="project-card" data-category="infrastructure">
                         <div class="project-thumb-wrapper">
-                            <img src="media/project3.jpg" alt="AEGIS CYBER RADAR" class="project-thumb glitch-hover">
-                            <span class="project-overlay-badge">DEFENSE v2</span>
+                            <img src="media/project3.jpg" alt="AEGIS Web Optimization"
+                                class="project-thumb glitch-hover">
+                            <span class="project-overlay-badge">OPTIMIZADO</span>
                         </div>
                         <div class="project-body">
-                            <div class="project-category">CIBERSEGURIDAD // ZERO TRUST</div>
-                            <h3 class="project-title font-orbitron">AEGIS CYBER RADAR CLI</h3>
+                            <div class="project-category">OPTIMIZACIÓN WEB // REDISEÑO FRONTEND</div>
+                            <h3 class="project-title font-orbitron">AEGIS INFRAESTRUCTURA &amp; CRO</h3>
                             <p class="project-desc">
-                                Sistema de detección de intrusiones con interfaz holográfica, radar de paquetes anómalos
-                                y firewall perimetral automatizado.
+                                Reingeniería de plataforma frontend y migración de código legado, logrando una reducción
+                                del 70% en tiempo de carga inicial y una duplicación en la tasa de retención.
                             </p>
 
                             <div class="project-metrics-grid">
                                 <div class="metric-box">
-                                    <span class="metric-key">BLOQUEO</span>
-                                    <span class="metric-val" style="color: var(--accent-rgb-green);">99.98%</span>
+                                    <span class="metric-key">TIEMPO CARGA</span>
+                                    <span class="metric-val" style="color: var(--accent-rgb-green);">&lt; 0.9s</span>
                                 </div>
                                 <div class="metric-box">
-                                    <span class="metric-key">ANÁLISIS</span>
-                                    <span class="metric-val" style="color: var(--cyan-neon);">&lt; 1ms</span>
+                                    <span class="metric-key">RETENCIÓN</span>
+                                    <span class="metric-val" style="color: var(--cyan-neon);">+65%</span>
                                 </div>
                                 <div class="metric-box">
-                                    <span class="metric-key">NIVEL</span>
-                                    <span class="metric-val">MIL-SPEC</span>
+                                    <span class="metric-key">REBOTE</span>
+                                    <span class="metric-val">-40%</span>
                                 </div>
                             </div>
 
                             <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary"
                                 style="margin-top: auto;">
-                                [ VER ESPECIFICACIONES ]
+                                [ SOLICITAR PROYECTO SIMILAR ]
                             </a>
                         </div>
                     </article>
@@ -210,7 +379,7 @@
         <section class="section" style="background: rgba(16, 20, 23, 0.4); border-top: 1px solid var(--border-subtle);">
             <div class="container">
                 <div class="section-header" style="margin-bottom: 2rem;">
-                    <span class="section-tag">TELEMETRÍA AGREGADA</span>
+                    <span class="section-tag">TELEMETRÍA DE RENDIMIENTO</span>
                     <h2 class="section-title scramble-text" data-scramble="DESEMPEÑO HISTÓRICO DE PROYECTOS">
                         DESEMPEÑO HISTÓRICO DE PROYECTOS
                     </h2>
@@ -218,24 +387,25 @@
 
                 <div class="stats-matrix-grid reveal-stagger">
                     <div class="stat-matrix-card">
-                        <div class="stat-matrix-number counter-val" data-target="45" data-suffix="+">0+</div>
-                        <div class="stat-matrix-label">PROYECTOS ENTREGADOS</div>
+                        <div class="stat-matrix-number counter-val" data-target="45" data-suffix="%" data-prefix="+">+0%
+                        </div>
+                        <div class="stat-matrix-label">TASA DE RETENCIÓN MEDIA</div>
                     </div>
                     <div class="stat-matrix-card">
-                        <div class="stat-matrix-number counter-val" data-target="0.0" data-suffix="ms"
-                            data-prefix="< 1">0ms</div>
-                        <div class="stat-matrix-label">FRAME DROPS REPORTADOS</div>
-                    </div>
-                    <div class="stat-matrix-card">
-                        <div class="stat-matrix-number counter-val" data-target="100" data-suffix="%">0%</div>
-                        <div class="stat-matrix-label">COMPATIBILIDAD GPU</div>
-                    </div>
-                    <div class="stat-matrix-card">
-                        <div class="stat-matrix-number counter-val" data-target="24" data-suffix="/7">0/7</div>
-                        <div class="stat-matrix-label">TELEMETRÍA EN VIVO</div>
+                        <div class="stat-matrix-number counter-val" data-target="1.0" data-suffix="s" data-prefix="< ">
+                            < 0s</div>
+                                <div class="stat-matrix-label">TIEMPO DE CARGA GARANTIZADO</div>
+                        </div>
+                        <div class="stat-matrix-card">
+                            <div class="stat-matrix-number counter-val" data-target="100" data-suffix="%">0%</div>
+                            <div class="stat-matrix-label">ADAPTABILIDAD MULTIDISPOSITIVO</div>
+                        </div>
+                        <div class="stat-matrix-card">
+                            <div class="stat-matrix-number counter-val" data-target="24" data-suffix="/7">0/7</div>
+                            <div class="stat-matrix-label">DISPONIBILIDAD TÉCNICA</div>
+                        </div>
                     </div>
                 </div>
-            </div>
         </section>
 
     </main>
@@ -247,12 +417,12 @@
                 <div class="footer-brand">
                     <div class="brand-title">BRIDGED<span>LOOP</span></div>
                     <p>
-                        Creative Design & Web. Transformando paradigmas digitales mediante código limpio, estética
-                        cyberpunk y microinteracciones de alta fidelidad.
+                        Creative Design &amp; Web. Ingeniería frontend de alta conversión, optimización de velocidad e
+                        identidad corporativa estratégica para empresas.
                     </p>
                     <div class="badge-hud" style="display: inline-flex;">
                         <span class="status-dot"></span>
-                        <span>SYSTEM MATRIX: V4.0.8 // ONLINE</span>
+                        <span>DISPONIBILIDAD DE SERVICIO // ONLINE</span>
                     </div>
                 </div>
 
@@ -262,34 +432,33 @@
                         <li><a href="index.html">» Inicio</a></li>
                         <li><a href="nosotros.html">» Nosotros</a></li>
                         <li><a href="portafolio.html">» Portafolio</a></li>
-                        <li><a href="contacto.html">» Terminal Contacto</a></li>
+                        <li><a href="contacto.html">» Contacto</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="footer-heading">MÓDULOS</h4>
+                    <h4 class="footer-heading">SOLUCIONES</h4>
                     <ul class="footer-links">
-                        <li><a href="portafolio.html">» UI/UX Cyberpunk</a></li>
-                        <li><a href="portafolio.html">» WebGL & 60 FPS</a></li>
-                        <li><a href="portafolio.html">» Arquitectura Web3</a></li>
-                        <li><a href="portafolio.html">» Telemetría HUD</a></li>
+                        <li><a href="contacto.html">» Landing Pages de Conversión</a></li>
+                        <li><a href="contacto.html">» Identidad Corporativa &amp; Logos</a></li>
+                        <li><a href="contacto.html">» Optimización de Velocidad</a></li>
+                        <li><a href="contacto.html">» Auditoría Técnica CRO</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="footer-heading">CANALES SEGUROS</h4>
+                    <h4 class="footer-heading">CANALES CORPORATIVOS</h4>
                     <ul class="footer-links">
-                        <li><span style="color: var(--accent-steel);">CLI:</span> <code
-                                style="color: var(--cyan-neon);">ssh terminal@bridgedloop.dev</code></li>
-                        <li><span style="color: var(--accent-steel);">STATUS:</span> OPERATIONAL</li>
-                        <li><span style="color: var(--accent-steel);">LATENCIA:</span> 14ms (OPTIMAL)</li>
+                        <li><span style="color: var(--accent-steel);">EMAIL:</span> <code
+                                style="color: var(--cyan-neon);">bridgedloop@gmail.com</code></li>
+                        <li><span style="color: var(--accent-steel);">SLA:</span> &lt; 24 HORAS HÁBILES</li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>© 2026 BRIDGED LOOP CREATIVE DESIGN & WEB. TODOS LOS PROTOCOLOS RESERVADOS.</div>
-                <div>ESTILO CYBERPUNK // DESARROLLADO A 60 FPS</div>
+                <div>© 2026 BRIDGED LOOP CREATIVE DESIGN &amp; WEB. TODOS LOS DERECHOS RESERVADOS.</div>
+                <div>INGENIERÍA FRONTEND DE ALTO RENDIMIENTO // CRO &amp; BRANDING</div>
             </div>
         </div>
     </footer>

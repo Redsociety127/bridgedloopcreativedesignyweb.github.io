@@ -218,6 +218,13 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.stroke();
       }
 
+      // Color dinámico de partículas según acento de página
+      const computedNeon = getComputedStyle(document.documentElement).getPropertyValue('--cyan-neon').trim() || '#00f0ff';
+      const isRed = computedNeon.toLowerCase().includes('ff1e56') || computedNeon.toLowerCase().includes('ff2a55') || computedNeon.toLowerCase().includes('ff3366');
+      const isGreen = computedNeon.toLowerCase().includes('00ff66') || computedNeon.toLowerCase().includes('00ff88') || computedNeon.toLowerCase().includes('22c55e') || computedNeon.toLowerCase().includes('00f076');
+      const particleRgb = isRed ? '255, 30, 86' : (isGreen ? '0, 255, 102' : '0, 240, 255');
+      const particleShadow = isRed ? '#ff1e56' : (isGreen ? '#00ff66' : '#00f0ff');
+
       // Draw floating digital energy particles
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
@@ -229,8 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
           p.x = Math.random() * width;
         }
 
-        ctx.fillStyle = `rgba(0, 240, 255, ${p.opacity})`;
-        ctx.shadowColor = '#00f0ff';
+        ctx.fillStyle = `rgba(${particleRgb}, ${p.opacity})`;
+        ctx.shadowColor = particleShadow;
         ctx.shadowBlur = 6;
         ctx.fillRect(p.x, p.y, p.size, p.size);
         ctx.shadowBlur = 0;
@@ -315,14 +322,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitBtn = document.getElementById('term-submit-btn');
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerText = '[ ENCRIPTANDO PAQUETE... ]';
+        submitBtn.innerText = '[ PROCESANDO ESPECIFICACIONES... ]';
       }
 
       if (progressContainer) progressContainer.style.display = 'block';
 
       // Log start
-      appendTerminalLog(`> INICIANDO HANDSHAKE CON SSL-CYBER...`, 'log-warn');
-      appendTerminalLog(`> ENCRIPTANDO PAYLOAD DE ORIGEN: [${name} <${email}>]`, 'log-prefix');
+      appendTerminalLog(`> INICIANDO CONEXIÓN SEGURA CON NODO CENTRAL...`, 'log-warn');
+      appendTerminalLog(`> REGISTRANDO REQUERIMIENTOS: [${name} <${email}>]`, 'log-prefix');
 
       let progress = 0;
       const interval = setInterval(() => {
@@ -336,13 +343,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (progress >= 100) {
           clearInterval(interval);
           setTimeout(() => {
-            appendTerminalLog(`> [200 OK] PROTOCOLO EJECUTADO EXITOSAMENTE.`, 'log-success');
-            appendTerminalLog(`> MENSAJE ENCOLADO EN LA RED NEURONAL DE BRIDGED LOOP.`, 'log-success');
-            appendTerminalLog(`> RESPUESTA ESTIMADA: < 24 HORAS ESTÁNDAR.`, 'log-prefix');
+            appendTerminalLog(`> [200 OK] ESPECIFICACIONES RECIBIDAS EXITOSAMENTE.`, 'log-success');
+            appendTerminalLog(`> ASIGNADO AL EQUIPO DE INGENIERÍA Y PROPUESTAS TÉCNICAS.`, 'log-success');
+            appendTerminalLog(`> ESTIMACIÓN Y COTIZACIÓN EN MENOS DE 24 HORAS HÁBILES.`, 'log-prefix');
             audioSynth.playConfirmBeep();
 
             if (submitBtn) {
-              submitBtn.innerText = '[ TRANSMISIÓN COMPLETADA ]';
+              submitBtn.innerText = '[ REQUERIMIENTOS ENVIADOS ]';
               submitBtn.classList.add('cyber-btn-primary');
             }
 

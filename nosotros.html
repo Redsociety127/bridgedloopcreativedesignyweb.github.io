@@ -8,11 +8,11 @@
     <meta name="description"
         content="Conoce la metodología estratégica, la ingeniería de conversión y el equipo técnico detrás de Bridged Loop Creative Design & Web.">
 
-    <!-- Google Fonts Oficiales -->
+    <!-- Google Fonts Oficiales: Orbitron, Plus Jakarta Sans, Space Mono & Syne -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap"
         rel="stylesheet">
 
     <!-- Estilos del Sistema -->
@@ -20,6 +20,9 @@
 </head>
 
 <body>
+    <!-- Matter.js Physics & Zero Gravity Suite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="zero-gravity.js"></script>
 
     <!-- Canvas de Grilla Dinámica a 60 FPS -->
     <canvas id="cyber-canvas"></canvas>
@@ -44,10 +47,6 @@
             </nav>
 
             <div class="nav-actions">
-                <div class="badge-hud">
-                    <span class="status-dot"></span>
-                    <span>INFRAESTRUCTURA ACTIVA // LATENCIA: <strong class="hud-latency">14ms</strong></span>
-                </div>
                 <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary">
                     [ SOLICITAR PROPUESTA ]
                 </a>
@@ -66,16 +65,16 @@
     <main class="main-wrapper">
 
         <!-- Hero / Intro Nosotros -->
-        <section class="section hero-section" style="min-height: auto; padding-top: 3rem; padding-bottom: 2rem;">
-            <div class="container text-center" style="max-width: 900px; text-align: center;">
+        <section class="section hero-section hero-section-compact">
+            <div class="container container-center-md text-center">
                 <span class="section-tag">METODOLOGÍA // AUTORIDAD &amp; CONVERSIÓN</span>
-                <h1 class="hero-title scramble-text" data-scramble="INGENIERÍA ESTRATÉGICA Y DISEÑO DE MARCA">
-                    INGENIERÍA ESTRATÉGICA Y DISEÑO DE MARCA
+                <h1 class="hero-title scramble-text" data-scramble="INGENIERÍA FRONTEND Y DISEÑO DE MARCA">
+                    INGENIERÍA FRONTEND Y DISEÑO DE MARCA
                 </h1>
-                <p class="hero-subtitle" style="margin: 0 auto;">
-                    En Bridged Loop combinamos la precisión del desarrollo frontend moderno con el diseño de identidad
-                    corporativa de alto impacto, creando activos digitales orientados a generar conversiones medibles y
-                    acelerar el retorno de inversión.
+                <p class="hero-subtitle mx-auto">
+                    Somos un estudio de diseño digital y desarrollo web enfocado en resolver dos pilares clave: landing
+                    pages de alta conversión que maximizan pauta y ventas, y branding corporativo que posiciona a tu
+                    empresa como líder del sector.
                 </p>
             </div>
         </section>
@@ -85,8 +84,8 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag">PRINCIPIOS FUNDAMENTALES</span>
-                    <h2 class="section-title scramble-text" data-scramble="FILOSOFÍA DE DESARROLLO Y RENDIMIENTO">
-                        FILOSOFÍA DE DESARROLLO Y RENDIMIENTO
+                    <h2 class="section-title scramble-text" data-scramble="FILOSOFÍA">
+                        FILOSOFÍA
                     </h2>
                     <p class="section-desc">
                         Nuestros 3 pilares estratégicos para garantizar velocidad, retención y posicionamiento comercial
@@ -106,7 +105,7 @@
                             </p>
                             <div class="card-footer">
                                 <span>PILAR_01</span>
-                                <span style="color: var(--cyan-neon);">PERFORMANCE_FIRST</span>
+                                <span class="text-accent">PERFORMANCE_FIRST</span>
                             </div>
                         </div>
                     </article>
@@ -116,13 +115,13 @@
                             <div class="card-icon">02</div>
                             <h3 class="card-title font-orbitron">AUTORIDAD VISUAL E IDENTIDAD ESTRATÉGICA</h3>
                             <p class="card-desc">
-                                Diseño que proyecta confianza institucional y solidez corporativa. Desarrollamos
+                                Diseño que proyecta confianza y solidez corporativa. Desarrollamos
                                 sistemas de marca vectoriales y tipografías normativas que diferencian y elevan la
                                 percepción de tu empresa.
                             </p>
                             <div class="card-footer">
                                 <span>PILAR_02</span>
-                                <span style="color: var(--cyan-neon);">BRAND_AUTHORITY</span>
+                                <span class="text-accent">BRAND_AUTHORITY</span>
                             </div>
                         </div>
                     </article>
@@ -130,7 +129,7 @@
                     <article class="cyber-card">
                         <div class="card-inner">
                             <div class="card-icon">03</div>
-                            <h3 class="card-title font-orbitron">ARQUITECTURA ESCALABLE Y SEO ESTRUCTURAL</h3>
+                            <h3 class="card-title font-orbitron">ARQUITECTURA ESCALABLE Y ESTRUCTURAL</h3>
                             <p class="card-desc">
                                 Código semántico estructurado, modular y preparado para indexación técnica en motores de
                                 búsqueda, asegurando compatibilidad multiplataforma y escalabilidad técnica a largo
@@ -138,7 +137,7 @@
                             </p>
                             <div class="card-footer">
                                 <span>PILAR_03</span>
-                                <span style="color: var(--cyan-neon);">CLEAN_ARCHITECTURE</span>
+                                <span class="text-accent">CLEAN_ARCHITECTURE</span>
                             </div>
                         </div>
                     </article>
@@ -147,8 +146,7 @@
         </section>
 
         <!-- Proceso Metodológico en 4 Etapas -->
-        <section class="section"
-            style="background: rgba(16, 20, 23, 0.5); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+        <section class="section section-panel-bordered">
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag">METODOLOGÍA DE TRABAJO</span>
@@ -161,14 +159,14 @@
                     </p>
                 </div>
 
-                <div style="max-width: 800px; margin: 0 auto;">
+                <div class="timeline-container-inner">
                     <div class="timeline-module reveal-stagger">
 
                         <div class="timeline-node">
                             <div class="timeline-tag">ETAPA 01 // ANÁLISIS</div>
-                            <h3 class="font-orbitron" style="font-size: 1.25rem; margin-bottom: 0.4rem;">DIAGNÓSTICO Y
+                            <h3 class="font-orbitron timeline-heading">DIAGNÓSTICO Y
                                 ARQUITECTURA</h3>
-                            <p style="opacity: 0.85;">
+                            <p class="timeline-desc">
                                 Análisis de mercado, benchmarking competitivo, definición de objetivos de conversión y
                                 estructuración de wireframes orientados a la experiencia de usuario (UX) y captura de
                                 leads.
@@ -177,9 +175,9 @@
 
                         <div class="timeline-node">
                             <div class="timeline-tag">ETAPA 02 // CREATIVIDAD</div>
-                            <h3 class="font-orbitron" style="font-size: 1.25rem; margin-bottom: 0.4rem;">DISEÑO DE
+                            <h3 class="font-orbitron timeline-heading">DISEÑO DE
                                 IDENTIDAD Y UI</h3>
-                            <p style="opacity: 0.85;">
+                            <p class="timeline-desc">
                                 Prototipado visual de alta fidelidad, validación de coherencia de marca, selección
                                 tipográfica institucional y diseño de interfaces optimizadas para generar confianza
                                 comercial.
@@ -188,9 +186,9 @@
 
                         <div class="timeline-node">
                             <div class="timeline-tag">ETAPA 03 // INGENIERÍA</div>
-                            <h3 class="font-orbitron" style="font-size: 1.25rem; margin-bottom: 0.4rem;">DESARROLLO E
+                            <h3 class="font-orbitron timeline-heading">DESARROLLO E
                                 INGENIERÍA FRONTEND</h3>
-                            <p style="opacity: 0.85;">
+                            <p class="timeline-desc">
                                 Maquetación limpia y modular, implementación de SEO estructural, optimización de
                                 recursos y pruebas de estrés para asegurar tiempos de carga menores a un segundo.
                             </p>
@@ -198,9 +196,9 @@
 
                         <div class="timeline-node">
                             <div class="timeline-tag">ETAPA 04 // PRODUCCIÓN</div>
-                            <h3 class="font-orbitron" style="font-size: 1.25rem; margin-bottom: 0.4rem;">DESPLIEGUE Y
+                            <h3 class="font-orbitron timeline-heading">DESPLIEGUE Y
                                 CONEXIÓN</h3>
-                            <p style="opacity: 0.85;">
+                            <p class="timeline-desc">
                                 Configuración en servidores de alto rendimiento, enlace de dominios seguros e
                                 integración técnica con CRM, WhatsApp, píxeles de pauta publicitaria y herramientas de
                                 analítica avanzada.
@@ -212,7 +210,7 @@
             </div>
         </section>
 
-        <!-- Nodos del Equipo / Red Técnica Humana -->
+        <!-- Nodos del Equipo / Liderazgo Técnico -->
         <section class="section">
             <div class="container">
                 <div class="section-header">
@@ -226,59 +224,26 @@
                     </p>
                 </div>
 
-                <div class="team-node-grid reveal-stagger">
+                <div class="team-node-grid">
 
                     <div class="team-card">
-                        <div class="team-avatar-wrapper">
-                            <div class="team-avatar"
-                                style="display: flex; align-items: center; justify-content: center; font-family: var(--font-orbitron); color: var(--cyan-neon); font-size: 1.8rem;">
-                                BL-01
+                        <div class="team-card-image-wrapper">
+                            <img src="media/yo.jpeg" alt="Ing. Alejandro P. - CEO & Fundador" class="team-card-image"
+                                loading="lazy">
+                            <div class="team-card-image-overlay"></div>
+                            <div class="team-card-badge">VERIFIED_FOUNDER</div>
+                        </div>
+                        <div class="team-card-body">
+                            <div class="team-role">CEO &amp; FUNDADOR DE BRIDGED LOOP</div>
+                            <h3 class="team-name font-orbitron">ING. ALEJANDRO P.</h3>
+                            <p class="team-card-bio">
+                                Especialista en arquitectura frontend, desarrollo de landing pages de alta conversión,
+                                manuales de marca y diseño de identidad visual.
+                            </p>
+                            <div class="badge-hud justify-center">
+                                <span class="status-dot"></span>
+                                <span>LIDERAZGO // COMPROMISO</span>
                             </div>
-                        </div>
-                        <div class="team-role">LEAD FRONTEND &amp; CRO ARCHITECT</div>
-                        <h3 class="team-name font-orbitron">ALEJANDRO A.</h3>
-                        <p style="font-size: 0.95rem; opacity: 0.85; margin-bottom: 1rem;">
-                            Especialista en arquitectura frontend, optimización Core Web Vitals y diseño de embudos de
-                            conversión para entornos B2B.
-                        </p>
-                        <div class="badge-hud" style="justify-content: center;">
-                            <span>DISPONIBILIDAD: ACTIVA</span>
-                        </div>
-                    </div>
-
-                    <div class="team-card">
-                        <div class="team-avatar-wrapper">
-                            <div class="team-avatar"
-                                style="display: flex; align-items: center; justify-content: center; font-family: var(--font-orbitron); color: var(--accent-steel); font-size: 1.8rem;">
-                                BL-02
-                            </div>
-                        </div>
-                        <div class="team-role">DIRECTORA DE IDENTIDAD &amp; UI DESIGN</div>
-                        <h3 class="team-name font-orbitron">VALERIA K.</h3>
-                        <p style="font-size: 0.95rem; opacity: 0.85; margin-bottom: 1rem;">
-                            Especialista en desarrollo de sistemas visuales corporativos, manuales de marca, diseño UI y
-                            coherencia gráfica institucional.
-                        </p>
-                        <div class="badge-hud" style="justify-content: center;">
-                            <span>DISPONIBILIDAD: ACTIVA</span>
-                        </div>
-                    </div>
-
-                    <div class="team-card">
-                        <div class="team-avatar-wrapper">
-                            <div class="team-avatar"
-                                style="display: flex; align-items: center; justify-content: center; font-family: var(--font-orbitron); color: var(--accent-rgb-green); font-size: 1.8rem;">
-                                BL-03
-                            </div>
-                        </div>
-                        <div class="team-role">INGENIERO DE INFRAESTRUCTURA &amp; VELOCIDAD</div>
-                        <h3 class="team-name font-orbitron">MARCUS R.</h3>
-                        <p style="font-size: 0.95rem; opacity: 0.85; margin-bottom: 1rem;">
-                            Especialista en optimización de rendimiento web, seguridad HTTPS, auditorías técnicas y
-                            configuración analítica.
-                        </p>
-                        <div class="badge-hud" style="justify-content: center;">
-                            <span>DISPONIBILIDAD: ACTIVA</span>
                         </div>
                     </div>
 
@@ -293,18 +258,22 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="brand-title">BRIDGED<span>LOOP</span></div>
-                    <p>
+                    <a href="index.html" class="footer-logo-link" aria-label="Bridged Loop Inicio">
+                        <div class="footer-logo-wrapper">
+                            <img src="media/logooficial.png" alt="Bridged Loop Logo Oficial" class="footer-logo-img">
+                        </div>
+                    </a>
+                    <p class="footer-brand-desc">
                         Creative Design &amp; Web. Ingeniería frontend de alta conversión, optimización de velocidad e
                         identidad corporativa estratégica para empresas.
                     </p>
-                    <div class="badge-hud" style="display: inline-flex;">
+                    <div class="badge-hud footer-badge-hud">
                         <span class="status-dot"></span>
                         <span>DISPONIBILIDAD DE SERVICIO // ONLINE</span>
                     </div>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-heading">NAVEGACIÓN</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">» Inicio</a></li>
@@ -314,7 +283,7 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-heading">SOLUCIONES</h4>
                     <ul class="footer-links">
                         <li><a href="contacto.html">» Landing Pages de Conversión</a></li>
@@ -324,12 +293,14 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-heading">CANALES CORPORATIVOS</h4>
                     <ul class="footer-links">
-                        <li><span style="color: var(--accent-steel);">EMAIL:</span> <code
-                                style="color: var(--cyan-neon);">bridgedloop@gmail.com</code></li>
-                        <li><span style="color: var(--accent-steel);">SLA:</span> &lt; 24 HORAS HÁBILES</li>
+                        <li><span class="text-muted">EMAIL:</span> <code
+                                class="text-accent">bridgedloop@gmail.com</code></li>
+                        <li><span class="text-muted">SLA:</span> &lt; 24 HORAS HÁBILES</li>
+                        <li><span class="text-muted">ESTADO:</span> <span class="text-accent">DISPONIBLE PARA
+                                PROYECTOS</span></li>
                     </ul>
                 </div>
             </div>

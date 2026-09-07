@@ -4,186 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bridged Loop // Arquitectura Web de Alta Conversión e Identidad Visual</title>
+    <title>Bridged Loop // Landing Pages de Alto Rendimiento e Identidad Estratégica</title>
     <meta name="description"
-        content="Agencia B2B especializada en desarrollo de landing pages de alto rendimiento, optimización CRO y diseño de identidad corporativa estratégica. Carga ultrarrápida y retorno de inversión.">
+        content="Agencia digital especializada en dos servicios núcleo: Desarrollo de Landing Pages de Alta Conversión y Creación de Logotipos / Branding Estratégico.">
 
-    <!-- Google Fonts Oficiales -->
+    <!-- Google Fonts Oficiales: Orbitron, Plus Jakarta Sans, Space Mono & Syne -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap"
         rel="stylesheet">
 
     <!-- Estilos del Sistema -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Configuración de Fondo y Acentos Rojo Neón para index.html -->
-    <style>
-        :root {
-            --bg-main: #181f23;
-            --cyan-neon: #ff1e56;
-            /* Sustitución de Azul Neón por Rojo Neón */
-            --cyan-glow: rgba(255, 30, 86, 0.45);
-            --cyan-dim: rgba(255, 30, 86, 0.18);
-            --border-active: rgba(255, 30, 86, 0.8);
-            --glow-shadow: 0 0 25px rgba(255, 30, 86, 0.35);
-        }
-
-        body {
-            background-color: #181f23;
-            background-image:
-                radial-gradient(circle at 50% 0%, rgba(255, 30, 86, 0.14) 0%, transparent 60%),
-                radial-gradient(circle at 90% 80%, rgba(116, 139, 145, 0.10) 0%, transparent 50%);
-        }
-
-        /* Resplandor y Acentos Rojo Neón sobre fondo #181f23 */
-        .hero-title,
-        h1,
-        h2,
-        .section-title {
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(255, 30, 86, 0.45);
-        }
-
-        .hero-subtitle,
-        .section-desc {
-            color: #c1d1cf;
-        }
-
-        .telemetry-item .telemetry-label {
-            color: #748b91;
-        }
-
-        .telemetry-item .telemetry-value {
-            color: #ffffff;
-        }
-
-        .telemetry-value.accent-cyan,
-        .tag-cyan {
-            color: #ff1e56 !important;
-        }
-
-        .section-tag {
-            color: #ff1e56 !important;
-            background: rgba(255, 30, 86, 0.1) !important;
-            border-left: 3px solid #ff1e56 !important;
-        }
-
-        .cyber-btn-primary {
-            background: linear-gradient(135deg, rgba(255, 30, 86, 0.28) 0%, rgba(116, 139, 145, 0.3) 100%) !important;
-            border-color: #ff1e56 !important;
-            box-shadow: 0 0 18px rgba(255, 30, 86, 0.35) !important;
-        }
-
-        .cyber-btn-primary:hover {
-            background: #ff1e56 !important;
-            color: #ffffff !important;
-            box-shadow: 0 0 32px #ff1e56 !important;
-        }
-
-        .cyber-btn:hover {
-            border-color: #ff1e56 !important;
-            background: rgba(255, 30, 86, 0.15) !important;
-            box-shadow: 0 0 20px rgba(255, 30, 86, 0.35) !important;
-        }
-
-        .cyber-card:hover {
-            border-color: #ff1e56 !important;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 30, 86, 0.3) !important;
-        }
-
-        .cyber-card::before {
-            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-                    rgba(255, 30, 86, 0.22),
-                    transparent 40%) !important;
-        }
-
-        .cyber-card:hover .card-icon {
-            background: #ff1e56 !important;
-            color: #ffffff !important;
-            box-shadow: 0 0 22px #ff1e56 !important;
-        }
-
-        .card-icon {
-            color: #ff1e56 !important;
-        }
-
-        .nav-brand:hover .brand-logo-img {
-            filter: drop-shadow(0 0 12px #ff1e56) drop-shadow(0 0 20px rgba(255, 30, 86, 0.5)) !important;
-        }
-
-        .nav-item a::after {
-            background: #ff1e56 !important;
-            box-shadow: 0 0 8px #ff1e56 !important;
-        }
-
-        .nav-item a:hover,
-        .nav-item a.active {
-            text-shadow: 0 0 10px rgba(255, 30, 86, 0.6) !important;
-        }
-
-        .brand-title span {
-            color: #ff1e56 !important;
-        }
-
-        .scramble-char {
-            color: #ff1e56 !important;
-            text-shadow: 0 0 8px #ff1e56 !important;
-        }
-
-        ::selection {
-            background: #ff1e56 !important;
-            color: #ffffff !important;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ff1e56 !important;
-            box-shadow: 0 0 10px #ff1e56 !important;
-        }
-
-        /* Estilos de Sección con Video de Fondo en Bucle */
-        .video-loop-section {
-            position: relative;
-            background: #101417;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 420px;
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .video-bg-loop {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: 1;
-            filter: brightness(0.40) contrast(1.2) saturate(1.1);
-            pointer-events: none;
-        }
-
-        .video-loop-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(24, 31, 35, 0.85) 0%, rgba(16, 20, 23, 0.55) 50%, rgba(24, 31, 35, 0.9) 100%),
-                        radial-gradient(circle at 50% 50%, rgba(255, 30, 86, 0.14) 0%, transparent 70%);
-            z-index: 2;
-            pointer-events: none;
-        }
-    </style>
 </head>
 
 <body>
+    <!-- Matter.js Physics & Zero Gravity Suite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="zero-gravity.js"></script>
 
-    <!-- Canvas de Grilla Cyberpunk Dinámica a 60 FPS -->
+    <!-- Canvas de Grilla Dinámica a 60 FPS -->
     <canvas id="cyber-canvas"></canvas>
     <div class="scanlines-overlay"></div>
 
@@ -206,10 +47,6 @@
             </nav>
 
             <div class="nav-actions">
-                <div class="badge-hud">
-                    <span class="status-dot"></span>
-                    <span>INFRAESTRUCTURA ACTIVA // LATENCIA: <strong class="hud-latency">14ms</strong></span>
-                </div>
                 <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary">
                     [ SOLICITAR PROPUESTA ]
                 </a>
@@ -232,19 +69,19 @@
             <div class="container hero-grid">
                 <div class="hero-content">
                     <div class="hero-badge">
-                        <span class="tag-cyan">● DESPLIEGUE ACTIVO</span>
-                        <span>ARQUITECTURA OPTIMIZADA // CRO &amp; IDENTIDAD</span>
+                        <span class="tag-cyan">● LANDING PAGES CRO</span>
+                        <span> &amp; BRANDING ESTRATÉGICO</span>
                     </div>
 
                     <h1 class="hero-title scramble-text"
-                        data-scramble="ARQUITECTURA WEB DE ALTA CONVERSIÓN E IDENTIDAD VISUAL ESTRATÉGICA">
-                        ARQUITECTURA WEB DE ALTA CONVERSIÓN E IDENTIDAD VISUAL ESTRATÉGICA
+                        data-scramble="LANDING PAGES QUE CONVIERTEN, NO QUE SOLO SE VEN BIEN">
+                        LANDING PAGES QUE CONVIERTEN, NO QUE SOLO SE VEN BIEN
                     </h1>
 
                     <p class="hero-subtitle">
-                        Desarrollamos landing pages de carga ultrarrápida y sistemas de marca orientados a maximizar la
-                        captura de clientes potenciales, optimizar el retorno de inversión (ROI) y consolidar la
-                        autoridad de tu empresa.
+                        Diseñamos y optimizamos páginas de alto rendimiento con metodología CRO, respaldadas por
+                        sistemas de marca que generan confianza inmediata. Menos rebote, más leads
+                        calificados. Demostramos que con código e ingeniería visual cualquier idea es posible. .
                     </p>
 
                     <div class="hero-cta-group">
@@ -275,21 +112,20 @@
                         </div>
                     </div>
                 </div>
-                <!-- Módulo derecho libre -->
             </div>
         </section>
 
-        <!-- Módulos de Especialidad (Soluciones Modulares) -->
+        <!-- Módulos de Especialidad (Servicios Núcleo) -->
         <section class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">SOLUCIONES MODULARES</span>
-                    <h2 class="section-title scramble-text" data-scramble="SERVICIOS DE ALTO RENDIMIENTO">
-                        SERVICIOS DE ALTO RENDIMIENTO
+                    <span class="section-tag">SERVICIOS DE ALTO RENDIMIENTO</span>
+                    <h2 class="section-title scramble-text" data-scramble="ESPECIALIDADES NÚCLEO">
+                        ESPECIALIDADES NÚCLEO
                     </h2>
                     <p class="section-desc">
-                        Ingeniería frontend estructurada y diseño corporativo de precisión para escalar la captación de
-                        clientes y proyectar autoridad en el mercado.
+                        Ingeniería frontend de precisión y diseño corporativo estratégico para escalar la captación de
+                        clientes y proyectar autoridad indiscutible.
                     </p>
                 </div>
 
@@ -308,15 +144,15 @@
                                     <polyline points="7 12 10 15 17 9"></polyline>
                                 </svg>
                             </div>
-                            <h3 class="card-title font-orbitron">LANDING PAGES DE CONVERSIÓN</h3>
+                            <h3 class="card-title font-orbitron">LANDING PAGES DE ALTA CONVERSIÓN</h3>
                             <p class="card-desc">
-                                Estructura optimizada para campañas de tráfico pago (Google Ads y Meta Ads), Core Web
-                                Vitals en verde, carga ultrarrápida e integración directa con CRM, WhatsApp y píxeles de
-                                seguimiento.
+                                Arquitectura frontend optimizada para campañas de tráfico pago (Google Ads y Meta Ads).
+                                Tiempos de carga menores a un segundo, Core Web Vitals en verde e integración directa
+                                con CRM, WhatsApp y píxeles de analítica.
                             </p>
                             <div class="card-footer">
-                                <span>MOD_01 // CRO_ENGINEERING</span>
-                                <span style="color: var(--cyan-neon);">ESTADO: ACTIVO</span>
+                                <span>CORE_01 // CRO_ENGINEERING</span>
+                                <span class="text-accent">ESTADO: ACTIVO</span>
                             </div>
                         </div>
                     </article>
@@ -333,15 +169,14 @@
                                     <circle cx="11" cy="11" r="2"></circle>
                                 </svg>
                             </div>
-                            <h3 class="card-title font-orbitron">DISEÑO DE LOGOTIPOS E IDENTIDAD CORPORATIVA</h3>
+                            <h3 class="card-title font-orbitron">CREACIÓN DE LOGOTIPOS &amp; BRANDING ESTRATÉGICO</h3>
                             <p class="card-desc">
-                                Construcción vectorial, manual de normas de marca, selección de tipografías
-                                y sistemas visuales aplicables a productos físicos y plataformas digitales
-                                de alto nivel.
+                                Construcción de logotipos vectoriales de impacto, manual normativo de identidad visual,
+                                selección tipográfica y sistemas gráficos escalables a formatos digitales y físicos.
                             </p>
                             <div class="card-footer">
-                                <span>MOD_02 // BRAND_AUTHORITY</span>
-                                <span style="color: var(--cyan-neon);">ESTADO: DISPONIBLE</span>
+                                <span>CORE_02 // BRAND_AUTHORITY</span>
+                                <span class="text-accent">ESTADO: DISPONIBLE</span>
                             </div>
                         </div>
                     </article>
@@ -360,15 +195,15 @@
                                     <circle cx="12" cy="15" r="2"></circle>
                                 </svg>
                             </div>
-                            <h3 class="card-title font-orbitron">OPTIMIZACIÓN Y REDISEÑO DE INFRAESTRUCTURA</h3>
+                            <h3 class="card-title font-orbitron">OPTIMIZACIÓN WEB &amp; AUDITORÍA CRO</h3>
                             <p class="card-desc">
-                                Migración de sitios obsoletos o lentos hacia código moderno. Incremento
-                                drástico en la velocidad de carga, SEO estructural y refinamiento de la experiencia de
-                                usuario (UX/UI).
+                                Migración de sitios lentos o anticuados hacia código moderno de alto rendimiento.
+                                Reducción drástica del rebote, optimización SEO técnica y modernización de interfaces
+                                UI/UX.
                             </p>
                             <div class="card-footer">
-                                <span>MOD_03 // PERFORMANCE_AUDIT</span>
-                                <span style="color: var(--cyan-neon);">ESTADO: OPTIMIZADO</span>
+                                <span>CORE_03 // PERFORMANCE_AUDIT</span>
+                                <span class="text-accent">ESTADO: OPTIMIZADO</span>
                             </div>
                         </div>
                     </article>
@@ -384,17 +219,18 @@
                 Tu navegador no soporta video HTML5.
             </video>
             <div class="video-loop-overlay"></div>
-            <div class="container" style="position: relative; z-index: 3; text-align: center; padding: 4rem 1.5rem;">
-                <span class="section-tag" style="margin-bottom: 1rem;">DESARROLLO EN TIEMPO REAL</span>
-                <h2 class="font-orbitron scramble-text" data-scramble="INGENIERÍA FRONTEND DE ALTO RENDIMIENTO"
-                    style="color: #ffffff; text-shadow: 0 0 20px rgba(255, 30, 86, 0.45); font-size: clamp(1.6rem, 3.2vw, 2.4rem); margin-bottom: 1rem;">
+            <div class="container video-loop-content">
+                <span class="section-tag mb-1">DESARROLLO EN TIEMPO REAL</span>
+                <h2 class="font-orbitron video-loop-title scramble-text"
+                    data-scramble="INGENIERÍA FRONTEND DE ALTO RENDIMIENTO">
                     INGENIERÍA FRONTEND DE ALTO RENDIMIENTO
                 </h2>
-                <p style="max-width: 650px; margin: 0 auto; color: #c1d1cf; font-size: 1.05rem; opacity: 0.9;">
-                    Arquitectura frontend de vanguardia, optimizada línea por línea para garantizar velocidad extrema, estabilidad operativa y máxima tasa de conversión.
+                <p class="video-loop-desc">
+                    Arquitectura frontend de vanguardia, optimizada línea por línea para garantizar velocidad extrema,
+                    estabilidad operativa y máxima tasa de conversión.
                 </p>
-                <div class="badge-hud" style="margin-top: 1.5rem; display: inline-flex;">
-                    <span class="status-dot" style="background: var(--cyan-neon); box-shadow: 0 0 8px var(--cyan-neon);"></span>
+                <div class="badge-hud badge-hud-center">
+                    <span class="status-dot"></span>
                     <span>DESARROLLO CONTINUO // DESPLIEGUE EN PRODUCCIÓN</span>
                 </div>
             </div>
@@ -402,16 +238,15 @@
 
         <!-- Call to Action Banner -->
         <section class="section">
-            <div class="container" style="text-align: center;">
-                <div class="cyber-card" style="max-width: 850px; margin: 0 auto; padding: 3.5rem 2rem;">
+            <div class="container text-center">
+                <div class="cyber-card cyber-card-cta">
                     <div class="card-inner">
-                        <span class="section-tag" style="margin-bottom: 1rem;">IMPULSA EL RENDIMIENTO DE TU
+                        <span class="section-tag mb-1">IMPULSA EL RENDIMIENTO DE TU
                             EMPRESA</span>
-                        <h2 class="font-orbitron"
-                            style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 1.2rem;">
+                        <h2 class="font-orbitron cta-card-title">
                             ESCALA TU ADQUISICIÓN DE CLIENTES
                         </h2>
-                        <p style="max-width: 600px; margin: 0 auto 2rem auto; font-size: 1.1rem; opacity: 0.85;">
+                        <p class="cta-card-desc">
                             Solicita un diagnóstico de conversión y una cotización técnica adaptada a los objetivos de
                             crecimiento de tu empresa.
                         </p>
@@ -430,18 +265,22 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="brand-title">BRIDGED<span>LOOP</span></div>
-                    <p>
+                    <a href="index.html" class="footer-logo-link" aria-label="Bridged Loop Inicio">
+                        <div class="footer-logo-wrapper">
+                            <img src="media/logooficial.png" alt="Bridged Loop Logo Oficial" class="footer-logo-img">
+                        </div>
+                    </a>
+                    <p class="footer-brand-desc">
                         Creative Design &amp; Web. Ingeniería frontend de alta conversión, optimización de velocidad e
                         identidad corporativa estratégica para empresas.
                     </p>
-                    <div class="badge-hud" style="display: inline-flex;">
+                    <div class="badge-hud footer-badge-hud">
                         <span class="status-dot"></span>
                         <span>DISPONIBILIDAD DE SERVICIO // ONLINE</span>
                     </div>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-heading">NAVEGACIÓN</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">» Inicio</a></li>
@@ -451,7 +290,7 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-heading">SOLUCIONES</h4>
                     <ul class="footer-links">
                         <li><a href="contacto.html">» Landing Pages de Conversión</a></li>
@@ -461,12 +300,14 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-heading">CANALES CORPORATIVOS</h4>
                     <ul class="footer-links">
-                        <li><span style="color: var(--accent-steel);">EMAIL:</span> <code
-                                style="color: var(--cyan-neon);">bridgedloop@gmail.com</code></li>
-                        <li><span style="color: var(--accent-steel);">SLA:</span> &lt; 24 HORAS HÁBILES</li>
+                        <li><span class="text-muted">EMAIL:</span> <code
+                                class="text-accent">bridgedloop@gmail.com</code></li>
+                        <li><span class="text-muted">SLA:</span> &lt; 24 HORAS HÁBILES</li>
+                        <li><span class="text-muted">ESTADO:</span> <span class="text-accent">DISPONIBLE PARA
+                                PROYECTOS</span></li>
                     </ul>
                 </div>
             </div>

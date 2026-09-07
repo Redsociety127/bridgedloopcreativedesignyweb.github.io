@@ -8,11 +8,11 @@
     <meta name="description"
         content="Ingresa los parámetros de tu empresa para recibir una estimación técnica y propuesta comercial en menos de 24 horas.">
 
-    <!-- Google Fonts Oficiales -->
+    <!-- Google Fonts Oficiales: Orbitron, Plus Jakarta Sans, Space Mono & Syne -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap"
         rel="stylesheet">
 
     <!-- Estilos del Sistema -->
@@ -20,6 +20,9 @@
 </head>
 
 <body>
+    <!-- Matter.js Physics & Zero Gravity Suite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="zero-gravity.js"></script>
 
     <!-- Canvas de Grilla Dinámica a 60 FPS -->
     <canvas id="cyber-canvas"></canvas>
@@ -44,10 +47,6 @@
             </nav>
 
             <div class="nav-actions">
-                <div class="badge-hud">
-                    <span class="status-dot"></span>
-                    <span>INFRAESTRUCTURA ACTIVA // LATENCIA: <strong class="hud-latency">14ms</strong></span>
-                </div>
                 <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary">
                     [ SOLICITAR PROPUESTA ]
                 </a>
@@ -66,13 +65,13 @@
     <main class="main-wrapper">
 
         <!-- Hero / Intro Contacto -->
-        <section class="section hero-section" style="min-height: auto; padding-top: 3rem; padding-bottom: 2rem;">
-            <div class="container text-center" style="max-width: 900px; text-align: center;">
+        <section class="section hero-section hero-section-compact">
+            <div class="container container-center-md text-center">
                 <span class="section-tag">CANAL INSTITUCIONAL // PROPUESTA TÉCNICA</span>
                 <h1 class="hero-title scramble-text" data-scramble="RECEPCIÓN DE ESPECIFICACIONES DE PROYECTO">
                     RECEPCIÓN DE ESPECIFICACIONES DE PROYECTO
                 </h1>
-                <p class="hero-subtitle" style="margin: 0 auto;">
+                <p class="hero-subtitle mx-auto">
                     Ingresa los parámetros de tu empresa para recibir una estimación técnica y propuesta comercial en
                     menos de 24 horas.
                 </p>
@@ -80,7 +79,7 @@
         </section>
 
         <!-- Terminal CLI Section -->
-        <section class="section" style="padding-top: 1rem;">
+        <section class="section section-pt-sm">
             <div class="container">
 
                 <div class="terminal-wrapper">
@@ -135,14 +134,25 @@
                                     </div>
                                 </div>
 
-                                <!-- Correo institucional / WhatsApp -->
+                                <!-- Correo institucional -->
                                 <div class="terminal-group">
-                                    <label class="terminal-label" for="term-email">&gt; 02. CORREO INSTITUCIONAL //
-                                        WHATSAPP</label>
+                                    <label class="terminal-label" for="term-email">&gt; 02. CORREO INSTITUCIONAL
+                                    </label>
                                     <div class="terminal-input-wrapper">
                                         <span class="terminal-prompt-icon">$</span>
                                         <input type="text" id="term-email" class="terminal-input"
-                                            placeholder="contacto@empresa.com o +52 ..." required autocomplete="off">
+                                            placeholder="contacto@empresa.com" required autocomplete="off">
+                                    </div>
+                                </div>
+
+                                <!-- número de WhatsApp -->
+                                <div class="terminal-group">
+                                    <label class="terminal-label" for="term-whatsapp">&gt; 03. NÚMERO DE
+                                        WHATSAPP</label>
+                                    <div class="terminal-input-wrapper">
+                                        <span class="terminal-prompt-icon">$</span>
+                                        <input type="text" id="term-whatsapp" class="terminal-input"
+                                            placeholder="+52 ..." required autocomplete="off">
                                     </div>
                                 </div>
 
@@ -152,11 +162,13 @@
                                     <div class="terminal-input-wrapper">
                                         <span class="terminal-prompt-icon">$</span>
                                         <select id="term-type" class="terminal-select">
-                                            <option value="LANDING_CRO">01 // LANDING PAGE DE CONVERSIÓN</option>
-                                            <option value="BRAND_DESIGN">02 // DISEÑO DE LOGOTIPO / MARCA</option>
-                                            <option value="FULL_PACK">03 // PAQUETE INTEGRAL</option>
-                                            <option value="OPTIMIZATION">04 // OPTIMIZACIÓN Y REDISEÑO DE
-                                                INFRAESTRUCTURA</option>
+                                            <option value="LANDING_CRO">01 // LANDING PAGE DE ALTA CONVERSIÓN</option>
+                                            <option value="BRAND_DESIGN">02 // CREACIÓN DE LOGOTIPO &amp; BRANDING
+                                            </option>
+                                            <option value="FULL_PACK">03 // PAQUETE INTEGRAL (LANDING + BRANDING)
+                                            </option>
+                                            <option value="OPTIMIZATION">04 // OPTIMIZACIÓN WEB &amp; AUDITORÍA CRO
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
@@ -166,8 +178,7 @@
                                     <label class="terminal-label" for="term-message">&gt; 04. ESPECIFICACIONES Y
                                         OBJETIVOS DEL PROYECTO</label>
                                     <div class="terminal-input-wrapper">
-                                        <span class="terminal-prompt-icon"
-                                            style="align-self: flex-start; margin-top: 0.8rem;">&gt;</span>
+                                        <span class="terminal-prompt-icon terminal-prompt-top">&gt;</span>
                                         <textarea id="term-message" class="terminal-textarea"
                                             placeholder="Describe los objetivos de conversión de tu empresa, público objetivo, plazos previstos y requerimientos técnicos clave..."
                                             required></textarea>
@@ -188,15 +199,13 @@
                             </div>
 
                             <!-- Botón de Ejecución -->
-                            <div
-                                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; margin-top: 1rem;">
-                                <div
-                                    style="font-family: var(--font-chakra); font-size: 0.8rem; color: var(--accent-steel);">
+                            <div class="terminal-footer-actions">
+                                <div class="terminal-hint">
                                     [ PROTOCOLO DE CONFIDENCIALIDAD GARANTIZADO ]
                                 </div>
                                 <button type="submit" id="term-submit-btn"
                                     class="cyber-btn cyber-btn-lg cyber-btn-primary">
-                                    [ Enviar Requerimientos ]
+                                    [ ENVIAR REQUERIMIENTOS ]
                                 </button>
                             </div>
 
@@ -228,7 +237,7 @@
                                 requerimientos corporativos.
                             </p>
                             <div class="card-footer">
-                                <span style="color: var(--cyan-neon);">bridgedloop@gmail.com</span>
+                                <span class="text-accent">bridgedloop@gmail.com</span>
                                 <span>OFICIAL</span>
                             </div>
                         </div>
@@ -243,7 +252,7 @@
                                 conversión y diseño de marca.
                             </p>
                             <div class="card-footer">
-                                <span style="color: var(--cyan-neon);">DIAGNÓSTICO CRO</span>
+                                <span class="text-accent">DIAGNÓSTICO CRO</span>
                                 <span>VIRTUAL</span>
                             </div>
                         </div>
@@ -258,7 +267,7 @@
                                 de 24 horas hábiles.
                             </p>
                             <div class="card-footer">
-                                <span style="color: var(--accent-rgb-green);">SLA: &lt; 24H</span>
+                                <span class="text-accent">SLA: &lt; 24H</span>
                                 <span>GARANTIZADO</span>
                             </div>
                         </div>
@@ -275,18 +284,22 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="brand-title">BRIDGED<span>LOOP</span></div>
-                    <p>
+                    <a href="index.html" class="footer-logo-link" aria-label="Bridged Loop Inicio">
+                        <div class="footer-logo-wrapper">
+                            <img src="media/logooficial.png" alt="Bridged Loop Logo Oficial" class="footer-logo-img">
+                        </div>
+                    </a>
+                    <p class="footer-brand-desc">
                         Creative Design &amp; Web. Ingeniería frontend de alta conversión, optimización de velocidad e
                         identidad corporativa estratégica para empresas.
                     </p>
-                    <div class="badge-hud" style="display: inline-flex;">
+                    <div class="badge-hud footer-badge-hud">
                         <span class="status-dot"></span>
                         <span>DISPONIBILIDAD DE SERVICIO // ONLINE</span>
                     </div>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-heading">NAVEGACIÓN</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">» Inicio</a></li>
@@ -296,7 +309,7 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-heading">SOLUCIONES</h4>
                     <ul class="footer-links">
                         <li><a href="contacto.html">» Landing Pages de Conversión</a></li>
@@ -306,12 +319,14 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-heading">CANALES CORPORATIVOS</h4>
                     <ul class="footer-links">
-                        <li><span style="color: var(--accent-steel);">EMAIL:</span> <code
-                                style="color: var(--cyan-neon);">bridgedloop@gmail.com</code></li>
-                        <li><span style="color: var(--accent-steel);">SLA:</span> &lt; 24 HORAS HÁBILES</li>
+                        <li><span class="text-muted">EMAIL:</span> <code
+                                class="text-accent">bridgedloop@gmail.com</code></li>
+                        <li><span class="text-muted">SLA:</span> &lt; 24 HORAS HÁBILES</li>
+                        <li><span class="text-muted">ESTADO:</span> <span class="text-accent">DISPONIBLE PARA
+                                PROYECTOS</span></li>
                     </ul>
                 </div>
             </div>

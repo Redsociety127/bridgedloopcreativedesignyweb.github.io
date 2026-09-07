@@ -8,179 +8,21 @@
     <meta name="description"
         content="Explora nuestros casos de éxito en desarrollo de landing pages de alta conversión, diseño de identidad corporativa y optimización de infraestructura web.">
 
-    <!-- Google Fonts Oficiales -->
+    <!-- Google Fonts Oficiales: Orbitron, Plus Jakarta Sans, Space Mono & Syne -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap"
         rel="stylesheet">
 
     <!-- Estilos del Sistema -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Configuración de Fondo y Acentos Verde Neón para portafolio.html -->
-    <style>
-        :root {
-            --bg-main: #181f23;
-            --cyan-neon: #00ff66;
-            /* Sustitución de acentos por Verde Neón */
-            --cyan-glow: rgba(0, 255, 102, 0.45);
-            --cyan-dim: rgba(0, 255, 102, 0.18);
-            --border-active: rgba(0, 255, 102, 0.8);
-            --glow-shadow: 0 0 25px rgba(0, 255, 102, 0.35);
-        }
-
-        body {
-            background-color: #181f23;
-            background-image:
-                radial-gradient(circle at 50% 0%, rgba(0, 255, 102, 0.14) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(116, 139, 145, 0.10) 0%, transparent 50%);
-        }
-
-        /* Resplandor y Acentos Verde Neón sobre fondo #181f23 */
-        .hero-title,
-        h1,
-        h2,
-        .section-title {
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(0, 255, 102, 0.45);
-        }
-
-        .hero-subtitle,
-        .section-desc {
-            color: #c1d1cf;
-        }
-
-        .section-tag {
-            color: #00ff66 !important;
-            background: rgba(0, 255, 102, 0.1) !important;
-            border-left: 3px solid #00ff66 !important;
-        }
-
-        /* Botones de Filtro en Verde Neón */
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: #00ff66 !important;
-            color: #101417 !important;
-            border-color: #00ff66 !important;
-            box-shadow: 0 0 18px rgba(0, 255, 102, 0.45) !important;
-        }
-
-        /* Tarjetas de Proyectos y Badges */
-        .project-card:hover {
-            border-color: #00ff66 !important;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 255, 102, 0.3) !important;
-        }
-
-        .project-overlay-badge {
-            background: rgba(16, 20, 23, 0.9) !important;
-            border: 1px solid #00ff66 !important;
-            color: #00ff66 !important;
-        }
-
-        .cyber-btn-primary {
-            background: linear-gradient(135deg, rgba(0, 255, 102, 0.28) 0%, rgba(116, 139, 145, 0.3) 100%) !important;
-            border-color: #00ff66 !important;
-            box-shadow: 0 0 18px rgba(0, 255, 102, 0.35) !important;
-        }
-
-        .cyber-btn-primary:hover {
-            background: #00ff66 !important;
-            color: #101417 !important;
-            font-weight: 800 !important;
-            box-shadow: 0 0 32px #00ff66 !important;
-        }
-
-        .cyber-btn:hover {
-            border-color: #00ff66 !important;
-            background: rgba(0, 255, 102, 0.15) !important;
-            box-shadow: 0 0 20px rgba(0, 255, 102, 0.35) !important;
-        }
-
-        .nav-brand:hover .brand-logo-img {
-            filter: drop-shadow(0 0 12px #00ff66) drop-shadow(0 0 20px rgba(0, 255, 102, 0.5)) !important;
-        }
-
-        .nav-item a::after {
-            background: #00ff66 !important;
-            box-shadow: 0 0 8px #00ff66 !important;
-        }
-
-        .nav-item a:hover,
-        .nav-item a.active {
-            text-shadow: 0 0 10px rgba(0, 255, 102, 0.6) !important;
-        }
-
-        .brand-title span {
-            color: #00ff66 !important;
-        }
-
-        .scramble-char {
-            color: #00ff66 !important;
-            text-shadow: 0 0 8px #00ff66 !important;
-        }
-
-        ::selection {
-            background: #00ff66 !important;
-            color: #101417 !important;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00ff66 !important;
-            box-shadow: 0 0 10px #00ff66 !important;
-        }
-
-        .stat-matrix-card::before {
-            background: linear-gradient(90deg, transparent, #00ff66, transparent) !important;
-        }
-
-        /* Estilos para Hero Video Top en portafolio.html */
-        .hero-portfolio-section {
-            position: relative;
-            overflow: hidden;
-            padding: 4.5rem 1.5rem 3.5rem 1.5rem !important;
-            min-height: 380px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .hero-video-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: 1;
-            filter: brightness(0.38) contrast(1.2) saturate(1.15);
-            pointer-events: none;
-        }
-
-        .hero-video-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(24, 31, 35, 0.85) 0%, rgba(16, 20, 23, 0.55) 50%, rgba(24, 31, 35, 0.95) 100%),
-                radial-gradient(circle at 50% 50%, rgba(0, 255, 102, 0.12) 0%, transparent 70%);
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .hero-portfolio-content {
-            position: relative;
-            z-index: 3;
-            max-width: 900px;
-            text-align: center;
-            margin: 0 auto;
-        }
-    </style>
 </head>
 
 <body>
+    <!-- Matter.js Physics & Zero Gravity Suite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="zero-gravity.js"></script>
 
     <!-- Canvas de Grilla Dinámica a 60 FPS -->
     <canvas id="cyber-canvas"></canvas>
@@ -205,10 +47,6 @@
             </nav>
 
             <div class="nav-actions">
-                <div class="badge-hud">
-                    <span class="status-dot"></span>
-                    <span>INFRAESTRUCTURA ACTIVA // LATENCIA: <strong class="hud-latency">14ms</strong></span>
-                </div>
                 <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary">
                     [ SOLICITAR PROPUESTA ]
                 </a>
@@ -233,20 +71,20 @@
                 Tu navegador no soporta video HTML5.
             </video>
             <div class="hero-video-overlay"></div>
-            <div class="container hero-portfolio-content">
-                <span class="section-tag" style="margin-bottom: 1rem;">CASOS DE ÉXITO // PROYECTOS VERIFICADOS</span>
-                <h1 class="hero-title scramble-text" data-scramble="REGISTRO DE PROYECTOS &amp; MÉTRICAS CRO">
-                    REGISTRO DE PROYECTOS &amp; MÉTRICAS CRO
+            <div class="container hero-portfolio-content portfolio-hero-container">
+                <span class="section-tag mb-1">CASOS DE ÉXITO // PROYECTOS VERIFICADOS</span>
+                <h1 class="hero-title scramble-text" data-scramble="REGISTRO DE PROYECTOS">
+                    REGISTRO DE PROYECTOS
                 </h1>
-                <p class="hero-subtitle" style="margin: 0 auto; max-width: 750px;">
+                <p class="hero-subtitle mx-auto max-w-750">
                     Nuestra selección de landing pages de alta conversión, sistemas de identidad corporativa e
                     infraestructura web optimizada con resultados comerciales comprobados.
                 </p>
             </div>
         </section>
 
-        <!-- Filtros de Proyectos -->
-        <section class="section" style="padding-top: 1rem;">
+        <!--- Filtros de Proyectos ----------------------------------------------------------------------------------------------->
+        <section class="section section-pt-sm">
             <div class="container">
 
                 <div class="portfolio-filters">
@@ -259,116 +97,243 @@
                 <!-- Grid de Proyectos -->
                 <div class="cyber-grid reveal-stagger" id="portfolio-grid">
 
-                    <!-- Proyecto 1: Landing Page B2B -->
-                    <article class="project-card" data-category="landing">
-                        <div class="project-thumb-wrapper">
-                            <img src="media/project1.jpg" alt="TERRA//NET B2B Landing Page"
-                                class="project-thumb glitch-hover">
-                            <span class="project-overlay-badge">PRODUCCIÓN</span>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-category">LANDING PAGE B2B // CRO &amp; LEADS</div>
-                            <h3 class="project-title font-orbitron">TERRA//NET PLATAFORMA B2B</h3>
-                            <p class="project-desc">
-                                Landing page de captura de leads calificados para empresa SaaS empresarial, optimizada
-                                para pauta en Google Ads y Meta Ads con conexión directa a CRM y WhatsApp.
-                            </p>
+                    <!-- Proyecto 1: Caso de Estudio Cultura Semillas -->
+                    <article class="project-card" data-category="landing" id="showcase-cultura-semillas">
+                        <div class="container">
 
-                            <div class="project-metrics-grid">
-                                <div class="metric-box">
-                                    <span class="metric-key">CARGA</span>
-                                    <span class="metric-val" style="color: var(--accent-rgb-green);">0.8s</span>
-                                </div>
-                                <div class="metric-box">
-                                    <span class="metric-key">CONVERSIÓN</span>
-                                    <span class="metric-val" style="color: var(--cyan-neon);">+52%</span>
-                                </div>
-                                <div class="metric-box">
-                                    <span class="metric-key">CORE VITALS</span>
-                                    <span class="metric-val">99/100</span>
-                                </div>
+                            <!-- Header del Caso de Estudio -->
+                            <div class="showcase-header-tag">
+                                <span class="hud-status-chip">
+                                    <span class="status-dot"></span>
+                                    <span>ACTIVA</span>
+                                </span>
+                                <span class="showcase-id-badge">CASE_STUDY // ID: CS-2026-LIVE</span>
                             </div>
 
-                            <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary"
-                                style="margin-top: auto;">
-                                [ SOLICITAR PROYECTO SIMILAR ]
-                            </a>
+                            <div class="showcase-modular-container">
+
+                                <!-- Ficha Técnica Lateral / Header -->
+                                <aside class="showcase-sidebar">
+                                    <div class="showcase-client-meta">
+                                        <span class="client-badge-label">CASO DE ESTUDIO DESTACADO</span>
+                                        <h2 class="showcase-title font-orbitron">CULTURA SEMILLAS</h2>
+                                        <p class="showcase-field-tag">
+                                            <strong>GIRO:</strong> Activar y aprovechar espacios públicos y comunitarios
+                                            de la
+                                            colonia Villas de San Juan donde se realicen actividades culturales; tanto
+                                            gastronómicas, deportivas, artísticas, etc.
+                                        </p>
+                                    </div>
+
+                                    <!-- Solución Implementada -->
+                                    <div class="showcase-brief">
+                                        <h4 class="showcase-subheading font-chakra">SOLUCIÓN IMPLEMENTADA</h4>
+                                        <p>
+                                            Plataforma web integral, arquitectura de catálogo responsivo y optimización
+                                            de
+                                            conversión técnica orientada a la difusión comunitaria.
+                                        </p>
+                                    </div>
+
+                                    <!-- Resultados & Telemetría -->
+                                    <div class="showcase-telemetry-grid">
+                                        <div class="telemetry-item">
+                                            <span class="telemetry-label">VELOCIDAD DE CARGA</span>
+                                            <span class="telemetry-value font-orbitron highlight-green">&lt; 1.1s</span>
+                                            <span class="telemetry-sub">Core Web Vitals Optimizados</span>
+                                        </div>
+                                        <div class="telemetry-item">
+                                            <span class="telemetry-label">ARQUITECTURA</span>
+                                            <span class="telemetry-value font-orbitron">100%</span>
+                                            <span class="telemetry-sub">Responsive &amp; Multi-device</span>
+                                        </div>
+                                        <div class="telemetry-item">
+                                            <span class="telemetry-label">DISEÑO &amp; RETENCIÓN</span>
+                                            <span class="telemetry-value font-orbitron">CRO + UX</span>
+                                            <span class="telemetry-sub">Estructura Limpia y Modular</span>
+                                        </div>
+                                        <div class="telemetry-item">
+                                            <span class="telemetry-label">CANAL DE CONVERSIÓN</span>
+                                            <span class="telemetry-value font-orbitron highlight-green">DIRECTO</span>
+                                            <span class="telemetry-sub">Asesoría Técnica y Registro</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Botón de Inspección en Vivo -->
+                                    <div class="showcase-action-wrapper">
+                                        <a href="https://culturasemillas.com" target="_blank" rel="noopener noreferrer"
+                                            class="cyber-btn-cs-primary font-chakra">
+                                            <span>[ INSPECCIONAR SITIO EN VIVO ]</span>
+                                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6">
+                                                </path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </aside>
+
+                                <!-- Viewport Showcase Carrusel -->
+                                <div class="showcase-viewport-wrapper">
+
+                                    <!-- Tabs de Navegación por Diapositivas -->
+                                    <div class="showcase-tabs-nav" role="tablist">
+                                        <button class="cs-tab-btn active" data-slide="0" role="tab"
+                                            aria-selected="true">
+                                            <span class="tab-index">01</span>
+                                            <span class="tab-text">Inicio</span>
+                                        </button>
+                                        <button class="cs-tab-btn" data-slide="1" role="tab" aria-selected="false">
+                                            <span class="tab-index">02</span>
+                                            <span class="tab-text">Catálogo Modular</span>
+                                        </button>
+                                        <button class="cs-tab-btn" data-slide="2" role="tab" aria-selected="false">
+                                            <span class="tab-index">03</span>
+                                            <span class="tab-text">Transparencia</span>
+                                        </button>
+                                        <button class="cs-tab-btn" data-slide="3" role="tab" aria-selected="false">
+                                            <span class="tab-index">04</span>
+                                            <span class="tab-text">Contacto</span>
+                                        </button>
+                                    </div>
+
+                                    <!-- Marco Monitor de Visualización -->
+                                    <div class="showcase-monitor-frame" id="cs-carousel" tabindex="0"
+                                        aria-label="Carrusel de capturas de Cultura Semillas">
+                                        <div class="showcase-slider-track">
+
+                                            <!-- Diapositiva 1: Inicio -->
+                                            <div class="showcase-slide active" data-index="0">
+                                                <div class="slide-media-container">
+                                                    <img src="media/portafolio/cultura-inicio.png"
+                                                        alt="Cultura Semillas - Página de Inicio" class="slide-img"
+                                                        loading="lazy">
+                                                    <div class="slide-fallback-mockup">
+                                                        <div class="fallback-badge">VISTA PANORÁMICA // 01 INICIO</div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide-caption-bar">
+                                                    <div class="caption-title font-chakra">01. VISTA DE INICIO //
+                                                        PROPUESTA Y
+                                                        COMUNIDAD</div>
+                                                    <div class="caption-desc">Diseño enfocado en la activación cultural
+                                                        y
+                                                        comunitaria de Villas de San Juan con acceso ágil a eventos e
+                                                        información.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Diapositiva 2: Catálogo Modular -->
+                                            <div class="showcase-slide" data-index="1">
+                                                <div class="slide-media-container">
+                                                    <img src="media/portafolio/cultura-catalogo.png"
+                                                        alt="Cultura Semillas - Catálogo Modular" class="slide-img"
+                                                        loading="lazy">
+                                                    <div class="slide-fallback-mockup">
+                                                        <div class="fallback-badge">ÁREA 2 // 02 CATÁLOGO MODULAR</div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide-caption-bar">
+                                                    <div class="caption-title font-chakra">02. CATÁLOGO MODULAR DE
+                                                        ESPACIOS Y
+                                                        TALLERES</div>
+                                                    <div class="caption-desc">Distribución organizada de actividades
+                                                        culturales,
+                                                        gastronómicas, deportivas y artísticas orientadas a la
+                                                        participación
+                                                        vecinal.</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Diapositiva 3: Transparencia -->
+                                            <div class="showcase-slide" data-index="2">
+                                                <div class="slide-media-container">
+                                                    <img src="media/portafolio/cultura-transparencia.png"
+                                                        alt="Cultura Semillas - Módulo de Transparencia"
+                                                        class="slide-img" loading="lazy">
+                                                    <div class="slide-fallback-mockup">
+                                                        <div class="fallback-badge">ÁREA 3 // 03 TRANSPARENCIA</div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide-caption-bar">
+                                                    <div class="caption-title font-chakra">03. TRANSPARENCIA Y RENDICIÓN
+                                                        COMUNITARIA
+                                                    </div>
+                                                    <div class="caption-desc">Sección informativa y documental que
+                                                        refuerza la
+                                                        confianza, intereses y valores compartidos de la comunidad.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Diapositiva 4: Contacto -->
+                                            <div class="showcase-slide" data-index="3">
+                                                <div class="slide-media-container">
+                                                    <img src="media/portafolio/cultura-contacto.png"
+                                                        alt="Cultura Semillas - Contacto y Canales de Comunicación"
+                                                        class="slide-img" loading="lazy">
+                                                    <div class="slide-fallback-mockup">
+                                                        <div class="fallback-badge">ÁREA 4 // 04 CONTACTO</div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide-caption-bar">
+                                                    <div class="caption-title font-chakra">04. CANALES DIRECTOS DE
+                                                        CONTACTO</div>
+                                                    <div class="caption-desc">Puntos de contacto directo para
+                                                        vinculación
+                                                        comunitaria, registro en talleres y propuestas ciudadanas.</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- Controles HUD del Carrusel -->
+                                        <div class="showcase-hud-controls">
+                                            <button class="hud-nav-btn prev" id="cs-prev"
+                                                aria-label="Diapositiva anterior">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2.5">
+                                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                                </svg>
+                                            </button>
+
+                                            <div class="hud-counter-display">
+                                                <span class="hud-num-current font-orbitron"
+                                                    id="cs-current-num">01</span>
+                                                <div class="hud-progress-track">
+                                                    <div class="hud-progress-fill" id="cs-progress-bar"></div>
+                                                </div>
+                                                <span class="hud-num-total font-orbitron">04</span>
+                                            </div>
+
+                                            <button class="hud-nav-btn next" id="cs-next"
+                                                aria-label="Siguiente diapositiva">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2.5">
+                                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
                         </div>
                     </article>
 
                     <!-- Proyecto 2: Identidad Corporativa -->
                     <article class="project-card" data-category="branding">
-                        <div class="project-thumb-wrapper">
-                            <img src="media/project2.jpg" alt="SYNAPSE Identidad de Marca"
-                                class="project-thumb glitch-hover">
-                            <span class="project-overlay-badge">SISTEMA COMPLETO</span>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-category">IDENTIDAD VISUAL // BRANDING CORPORATIVO</div>
-                            <h3 class="project-title font-orbitron">SYNAPSE CORP IDENTIDAD GLOBAL</h3>
-                            <p class="project-desc">
-                                Construcción de logotipo vectorial, manual normativo de identidad corporativa, sistema
-                                tipográfico y aplicaciones para productos físicos y plataformas digitales de alta
-                                dirección.
-                            </p>
 
-                            <div class="project-metrics-grid">
-                                <div class="metric-box">
-                                    <span class="metric-key">FORMATOS</span>
-                                    <span class="metric-val" style="color: var(--accent-rgb-green);">VECTORIAL</span>
-                                </div>
-                                <div class="metric-box">
-                                    <span class="metric-key">AUTORIDAD</span>
-                                    <span class="metric-val" style="color: var(--cyan-neon);">PREMIUM</span>
-                                </div>
-                                <div class="metric-box">
-                                    <span class="metric-key">MANUAL</span>
-                                    <span class="metric-val">100% NORMATIVO</span>
-                                </div>
-                            </div>
-
-                            <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary"
-                                style="margin-top: auto;">
-                                [ SOLICITAR PROYECTO SIMILAR ]
-                            </a>
-                        </div>
                     </article>
 
                     <!-- Proyecto 3: Rediseño & Optimización -->
                     <article class="project-card" data-category="infrastructure">
-                        <div class="project-thumb-wrapper">
-                            <img src="media/project3.jpg" alt="AEGIS Web Optimization"
-                                class="project-thumb glitch-hover">
-                            <span class="project-overlay-badge">OPTIMIZADO</span>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-category">OPTIMIZACIÓN WEB // REDISEÑO FRONTEND</div>
-                            <h3 class="project-title font-orbitron">AEGIS INFRAESTRUCTURA &amp; CRO</h3>
-                            <p class="project-desc">
-                                Reingeniería de plataforma frontend y migración de código legado, logrando una reducción
-                                del 70% en tiempo de carga inicial y una duplicación en la tasa de retención.
-                            </p>
 
-                            <div class="project-metrics-grid">
-                                <div class="metric-box">
-                                    <span class="metric-key">TIEMPO CARGA</span>
-                                    <span class="metric-val" style="color: var(--accent-rgb-green);">&lt; 0.9s</span>
-                                </div>
-                                <div class="metric-box">
-                                    <span class="metric-key">RETENCIÓN</span>
-                                    <span class="metric-val" style="color: var(--cyan-neon);">+65%</span>
-                                </div>
-                                <div class="metric-box">
-                                    <span class="metric-key">REBOTE</span>
-                                    <span class="metric-val">-40%</span>
-                                </div>
-                            </div>
-
-                            <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary"
-                                style="margin-top: auto;">
-                                [ SOLICITAR PROYECTO SIMILAR ]
-                            </a>
-                        </div>
                     </article>
 
                 </div>
@@ -376,9 +341,9 @@
         </section>
 
         <!-- Métricas Globales del Portafolio -->
-        <section class="section" style="background: rgba(16, 20, 23, 0.4); border-top: 1px solid var(--border-subtle);">
+        <section class="section section-alt-bg">
             <div class="container">
-                <div class="section-header" style="margin-bottom: 2rem;">
+                <div class="section-header mb-2">
                     <span class="section-tag">TELEMETRÍA DE RENDIMIENTO</span>
                     <h2 class="section-title scramble-text" data-scramble="DESEMPEÑO HISTÓRICO DE PROYECTOS">
                         DESEMPEÑO HISTÓRICO DE PROYECTOS
@@ -393,19 +358,19 @@
                     </div>
                     <div class="stat-matrix-card">
                         <div class="stat-matrix-number counter-val" data-target="1.0" data-suffix="s" data-prefix="< ">
-                            < 0s</div>
-                                <div class="stat-matrix-label">TIEMPO DE CARGA GARANTIZADO</div>
-                        </div>
-                        <div class="stat-matrix-card">
-                            <div class="stat-matrix-number counter-val" data-target="100" data-suffix="%">0%</div>
-                            <div class="stat-matrix-label">ADAPTABILIDAD MULTIDISPOSITIVO</div>
-                        </div>
-                        <div class="stat-matrix-card">
-                            <div class="stat-matrix-number counter-val" data-target="24" data-suffix="/7">0/7</div>
-                            <div class="stat-matrix-label">DISPONIBILIDAD TÉCNICA</div>
-                        </div>
+                            &lt; 0s</div>
+                        <div class="stat-matrix-label">TIEMPO DE CARGA GARANTIZADO</div>
+                    </div>
+                    <div class="stat-matrix-card">
+                        <div class="stat-matrix-number counter-val" data-target="100" data-suffix="%">0%</div>
+                        <div class="stat-matrix-label">ADAPTABILIDAD MULTIDISPOSITIVO</div>
+                    </div>
+                    <div class="stat-matrix-card">
+                        <div class="stat-matrix-number counter-val" data-target="24" data-suffix="/7">0/7</div>
+                        <div class="stat-matrix-label">DISPONIBILIDAD TÉCNICA</div>
                     </div>
                 </div>
+            </div>
         </section>
 
     </main>
@@ -415,18 +380,22 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="brand-title">BRIDGED<span>LOOP</span></div>
-                    <p>
+                    <a href="index.html" class="footer-logo-link" aria-label="Bridged Loop Inicio">
+                        <div class="footer-logo-wrapper">
+                            <img src="media/logooficial.png" alt="Bridged Loop Logo Oficial" class="footer-logo-img">
+                        </div>
+                    </a>
+                    <p class="footer-brand-desc">
                         Creative Design &amp; Web. Ingeniería frontend de alta conversión, optimización de velocidad e
                         identidad corporativa estratégica para empresas.
                     </p>
-                    <div class="badge-hud" style="display: inline-flex;">
+                    <div class="badge-hud footer-badge-hud">
                         <span class="status-dot"></span>
                         <span>DISPONIBILIDAD DE SERVICIO // ONLINE</span>
                     </div>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-heading">NAVEGACIÓN</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">» Inicio</a></li>
@@ -436,7 +405,7 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-heading">SOLUCIONES</h4>
                     <ul class="footer-links">
                         <li><a href="contacto.html">» Landing Pages de Conversión</a></li>
@@ -446,12 +415,14 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-heading">CANALES CORPORATIVOS</h4>
                     <ul class="footer-links">
-                        <li><span style="color: var(--accent-steel);">EMAIL:</span> <code
-                                style="color: var(--cyan-neon);">bridgedloop@gmail.com</code></li>
-                        <li><span style="color: var(--accent-steel);">SLA:</span> &lt; 24 HORAS HÁBILES</li>
+                        <li><span class="text-muted">EMAIL:</span> <code
+                                class="text-accent">bridgedloop@gmail.com</code></li>
+                        <li><span class="text-muted">SLA:</span> &lt; 24 HORAS HÁBILES</li>
+                        <li><span class="text-muted">ESTADO:</span> <span class="text-accent">DISPONIBLE PARA
+                                PROYECTOS</span></li>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1113.2 234.08">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: ChakraPetch-Medium, 'Chakra Petch';
+        font-size: 58px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-3 {
+        font-weight: 500;
+      }
+
+      .cls-4 {
+        fill: #c1d1cf;
+      }
+
+      .cls-5 {
+        stroke: blue;
+      }
+
+      .cls-5, .cls-6, .cls-7 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 16px;
+      }
+
+      .cls-6 {
+        stroke: lime;
+      }
+
+      .cls-3 {
+        font-family: OxaniumRoman-Medium, Oxanium;
+        font-size: 117px;
+        font-variation-settings: 'wght' 500;
+      }
+
+      .cls-8 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-9 {
+        fill: #f5a110;
+      }
+
+      .cls-10 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-7 {
+        stroke: red;
+      }
+
+      .cls-11 {
+        letter-spacing: -.09em;
+      }
+
+      .cls-12 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-13 {
+        letter-spacing: -.11em;
+      }
+    </style>
+  </defs>
+  <g id="Capa_1-2" data-name="Capa 1">
+    <text class="cls-3" transform="translate(285.5 115.75)"><tspan class="cls-2" x="0" y="0">BRIDGED</tspan><tspan class="cls-4" x="490.81" y="0"> </tspan><tspan class="cls-9" x="518.89" y="0">LOOP</tspan></text>
+    <g>
+      <circle class="cls-7" cx="122.99" cy="58.63" r="50.63"/>
+      <circle class="cls-5" cx="58.63" cy="170.49" r="50.63"/>
+      <circle class="cls-6" cx="187.93" cy="170.49" r="50.63"/>
+    </g>
+    <text class="cls-1" transform="translate(294.08 202.53)"><tspan class="cls-13" x="0" y="0">W</tspan><tspan class="cls-8" x="44.14" y="0">eb and C</tspan><tspan class="cls-11" x="248.53" y="0">r</tspan><tspan class="cls-8" x="266.27" y="0">e</tspan><tspan class="cls-12" x="295.62" y="0">a</tspan><tspan class="cls-8" x="323.87" y="0">ti</tspan><tspan class="cls-10" x="354.43" y="0">v</tspan><tspan class="cls-8" x="378.73" y="0">e Design </tspan></text>
+  </g>
+</svg>

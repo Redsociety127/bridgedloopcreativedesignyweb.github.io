@@ -294,9 +294,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const termAcceptCheckbox = document.getElementById('term-accept');
+  if (termAcceptCheckbox) {
+    termAcceptCheckbox.addEventListener('change', () => {
+      audioSynth.playKeyClick();
+    });
+  }
+
   if (terminalForm) {
     terminalForm.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      if (termAcceptCheckbox && !termAcceptCheckbox.checked) {
+        appendTerminalLog(`> [ERROR] Debes aceptar los Términos y Condiciones y el protocolo NDA antes de transmitir.`, 'log-warn');
+        audioSynth.playConfirmBeep();
+        termAcceptCheckbox.focus();
+        return;
+      }
+
       audioSynth.playConfirmBeep();
 
       const name = document.getElementById('term-name')?.value || 'ANÓNIMO';
@@ -312,6 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (progressContainer) progressContainer.style.display = 'block';
 
       appendTerminalLog(`> INICIANDO CONEXIÓN SEGURA CON NODO CENTRAL...`, 'log-warn');
+      appendTerminalLog(`> PROTOCOLO NDA & TÉRMINOS: [ACEPTADO / VINCULANTE]`, 'log-success');
       appendTerminalLog(`> REGISTRANDO REQUERIMIENTOS: [${name} <${email}>]`, 'log-prefix');
 
       let progress = 0;

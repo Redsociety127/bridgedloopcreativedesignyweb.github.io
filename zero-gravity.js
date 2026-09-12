@@ -1,6 +1,7 @@
 /**
  * Bridged Loop - Zero Gravity Physics Engine with Web Audio Effects
  * Powered by Matter.js & Web Audio API
+ * Soporta todos los elementos de index.html, nosotros.html, portafolio.html, contacto.html y terminosycondiciones.html
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,7 +14,7 @@ let physicsElements = [];
 let audioCtx = null;
 
 /* ==========================================================================
-   SINTETIZADOR DE AUDIO (Web Audio API)
+   1. SINTETIZADOR DE AUDIO (Web Audio API)
    ========================================================================== */
 function initAudio() {
     if (!audioCtx) {
@@ -50,7 +51,7 @@ function playBoingSound(intensity = 1) {
 
         osc.start(now);
         osc.stop(now + 0.19);
-    } catch (e) {}
+    } catch (e) { }
 }
 
 function playActivationSound() {
@@ -73,11 +74,11 @@ function playActivationSound() {
 
         osc.start(now);
         osc.stop(now + 0.36);
-    } catch (e) {}
+    } catch (e) { }
 }
 
 /* ==========================================================================
-   CONTROL DE LA UI Y BOTÓN
+   2. CONTROL DE LA UI Y BOTÓN FLOTANTE
    ========================================================================== */
 function createGravityButton() {
     if (document.getElementById('gravity-toggle-btn')) return;
@@ -107,29 +108,164 @@ function toggleZeroGravity() {
         isGravityActive = true;
         if (btnText) btnText.innerText = 'RESTAURAR GRAVEDAD';
         btn?.classList.add('gravity-active');
+        document.body.style.overflow = 'hidden';
         playActivationSound();
         startPhysics();
     } else {
         isGravityActive = false;
         if (btnText) btnText.innerText = 'ACTIVAR MODO GRAVEDAD ZERO';
         btn?.classList.remove('gravity-active');
+        document.body.style.overflow = '';
         playActivationSound();
         stopPhysics();
     }
 }
 
 /* ==========================================================================
-   MOTOR FÍSICO Y EVENTOS DE COLISIÓN
+   3. RECOLECCIÓN DE TODOS LOS ELEMENTOS DEL DOM
+   ========================================================================== */
+function getTargetElements() {
+    // Selectores para capturar todos los componentes, tarjetas, textos, botones, imágenes y módulos
+    const candidateSelectors = [
+        // --- 1. Módulos, Tarjetas y Estructuras Autónomas ---
+        '.cyber-card',
+        '.project-card',
+        '.stat-matrix-card',
+        '.legal-card',
+        '.cta-card',
+        '.value-card',
+        '.process-step',
+        '.team-card',
+        '.contact-card',
+        '.telemetry-item',
+        '.terminal-group',
+        '.terminal-header',
+        '.terminal-logs',
+        '.terminal-terms-group',
+        '.terminal-btn',
+        '.terminal-submit-btn',
+        '.legal-contact-callout',
+        '.legal-table-wrapper',
+        '.terminal-hint-box',
+        '.showcase-sidebar',
+        '.showcase-brief',
+        '.showcase-header-tag',
+
+        // --- 2. Navbar & Cabecera ---
+        '.nav-brand',
+        '.nav-links > li',
+        '.nav-actions > a',
+        '.nav-actions > button:not(#gravity-toggle-btn)',
+        '.mobile-toggle',
+
+        // --- 3. Badges, Tags, Filtros y Chips ---
+        '.badge-hud',
+        '.hero-badge',
+        '.section-tag',
+        '.tag-cyan',
+        '.status-dot',
+        '.quick-nav-pill',
+        '.quick-nav-label',
+        '.filter-btn',
+        '.hud-status-chip',
+        '.showcase-id-badge',
+        '.client-badge-label',
+
+        // --- 4. Títulos, Subtítulos y Bloques de Texto ---
+        'h1',
+        'h2',
+        'h3',
+        'h4',
+        'h5',
+        'h6',
+        '.hero-title',
+        '.hero-subtitle',
+        '.section-title',
+        '.section-desc',
+        '.card-title',
+        '.card-desc',
+        'p',
+        'blockquote',
+
+        // --- 5. Botones, Enlaces y Llamadas a la Acción ---
+        '.hero-cta-group > a',
+        '.hero-cta-group > button',
+        '.cyber-btn:not(#gravity-toggle-btn)',
+        'a.cyber-btn',
+        'button.cyber-btn:not(#gravity-toggle-btn)',
+        'button:not(#gravity-toggle-btn):not(.terminal-checkbox)',
+        'a:not(#gravity-toggle-btn)',
+
+        // --- 6. Medios, Gráficos e Iconos ---
+        'img',
+        'video:not(.hero-video-bg)',
+        '.brand-logo-wrapper',
+        '.brand-logo-img',
+        '.hero-avatar',
+        '.card-icon',
+        '.footer-logo-wrapper',
+
+        // --- 7. Formularios y Campos ---
+        'input:not([type="hidden"])',
+        'textarea',
+        'select',
+        '.form-group',
+
+        // --- 8. Footer Global ---
+        '.footer-brand',
+        '.footer-brand-desc',
+        '.footer-badge-hud',
+        '.footer-col',
+        '.footer-heading',
+        '.footer-links > li',
+        '.footer-bottom > div'
+    ];
+
+    const rawElements = [];
+    const seen = new Set();
+
+    candidateSelectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+            // Exclusiones críticas
+            if (el.closest('#gravity-toggle-btn')) return;
+            if (el.id === 'cyber-canvas' || el.classList.contains('scanlines-overlay')) return;
+            if (el.tagName === 'BODY' || el.tagName === 'HTML' || el.tagName === 'MAIN' || el.tagName === 'SECTION') return;
+            if (el.classList.contains('container') || el.classList.contains('cyber-grid') || el.classList.contains('legal-content-flow')) return;
+
+            if (!seen.has(el)) {
+                seen.add(el);
+                rawElements.push(el);
+            }
+        });
+    });
+
+    // Filtramos para conservar los bloques principales sin desmembrar tarjetas completas
+    const targetElements = rawElements.filter(el => {
+        for (const other of rawElements) {
+            if (other !== el && other.contains(el)) {
+                return false; // Si su contenedor ya es un cuerpo rígido, no duplicamos
+            }
+        }
+        return true;
+    });
+
+    return targetElements;
+}
+
+/* ==========================================================================
+   4. MOTOR FÍSICO (MATTER.JS) Y SIMULACIÓN
    ========================================================================== */
 function startPhysics() {
     const { Engine, Bodies, Composite, Mouse, MouseConstraint, Runner, Events } = Matter;
 
     engine = Engine.create();
-    engine.gravity.y = 0.05;
+    engine.gravity.y = 0.08; // Gravedad zero suave con caída ligera estética
+    engine.gravity.x = 0;
 
     const width = window.innerWidth;
     const height = window.innerHeight;
 
+    // Paredes perimétricas para contener todos los elementos en la ventana visible
     const wallThickness = 120;
     const ground = Bodies.rectangle(width / 2, height + wallThickness / 2, width * 2, wallThickness, { isStatic: true });
     const ceiling = Bodies.rectangle(width / 2, -wallThickness / 2, width * 2, wallThickness, { isStatic: true });
@@ -138,32 +274,30 @@ function startPhysics() {
 
     Composite.add(engine.world, [ground, ceiling, leftWall, rightWall]);
 
-    const targets = document.querySelectorAll(
-        'main h1, main h2, main p, main a, main button, main .cyber-card, main .project-card, main .stat-matrix-card, section h1, section h2, section p, section a:not(#gravity-toggle-btn):not(#whatsapp-float-btn)'
-    );
-
+    const targets = getTargetElements();
     physicsElements = [];
 
     targets.forEach((el) => {
-        if (el.closest('#gravity-toggle-btn') || el.closest('#whatsapp-float-btn') || el.closest('.hud-navbar')) return;
-
         const rect = el.getBoundingClientRect();
         if (rect.width === 0 || rect.height === 0) return;
 
+        // Guardamos el estilo original
         el.dataset.origStyle = el.getAttribute('style') || '';
 
+        // Creamos cuerpo físico rectangular correspondiente a las dimensiones exactas
         const body = Bodies.rectangle(
             rect.left + rect.width / 2,
             rect.top + rect.height / 2,
             rect.width,
             rect.height,
             {
-                restitution: 0.88,
-                frictionAir: 0.02,
+                restitution: 0.85, // Rebote dinámico
+                frictionAir: 0.02,  // Deslizamiento aeroespacial
                 friction: 0.08
             }
         );
 
+        // Convertimos el elemento visual a capa fija
         el.style.position = 'fixed';
         el.style.left = '0px';
         el.style.top = '0px';
@@ -173,15 +307,17 @@ function startPhysics() {
         el.style.zIndex = '9000';
         el.style.userSelect = 'none';
         el.style.pointerEvents = 'auto';
+        el.style.transform = `translate3d(${rect.left}px, ${rect.top}px, 0px) rotate(0rad)`;
 
         Composite.add(engine.world, body);
         physicsElements.push({ el, body, rect });
     });
 
+    // Manejo de sonido de colisiones dinámicas
     let lastSoundTime = 0;
     Events.on(engine, 'collisionStart', (event) => {
         const now = Date.now();
-        if (now - lastSoundTime > 50) {
+        if (now - lastSoundTime > 60) {
             const pair = event.pairs[0];
             if (pair) {
                 const speedA = pair.bodyA.speed || 0;
@@ -196,11 +332,12 @@ function startPhysics() {
         }
     });
 
+    // Control de interacción y lanzamiento con el puntero/ratón
     const mouse = Mouse.create(document.body);
     const mouseConstraint = MouseConstraint.create(engine, {
         mouse: mouse,
         constraint: {
-            stiffness: 0.25,
+            stiffness: 0.22,
             render: { visible: false }
         }
     });
@@ -210,6 +347,7 @@ function startPhysics() {
     runner = Runner.create();
     Runner.run(runner, engine);
 
+    // Loop de renderizado a 60 FPS
     function updateLoop() {
         if (!isGravityActive) return;
 
@@ -227,15 +365,19 @@ function startPhysics() {
     requestAnimationFrame(updateLoop);
 }
 
+/* ==========================================================================
+   5. RESTAURACIÓN DE LA GRAVEDAD Y POSICIÓN ORIGINAL
+   ========================================================================== */
 function stopPhysics() {
     const { Runner, Composite } = Matter;
 
     if (runner) Runner.stop(runner);
     if (engine) Composite.clear(engine.world, false);
 
-    physicsElements.forEach(({ el }) => {
-        el.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
-        el.style.transform = 'translate3d(0, 0, 0) rotate(0rad)';
+    physicsElements.forEach(({ el, rect }) => {
+        // Transición suave de retorno a la posición original exacta
+        el.style.transition = 'transform 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2)';
+        el.style.transform = `translate3d(${rect.left}px, ${rect.top}px, 0px) rotate(0rad)`;
 
         setTimeout(() => {
             const orig = el.dataset.origStyle;
@@ -245,7 +387,7 @@ function stopPhysics() {
                 el.removeAttribute('style');
             }
             delete el.dataset.origStyle;
-        }, 600);
+        }, 700);
     });
 
     physicsElements = [];

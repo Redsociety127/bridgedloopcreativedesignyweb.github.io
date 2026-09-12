@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones // BRIDGED LOOP CREATIVE DESIGN & WEB</title>
+    <meta name="description"
+        content="Términos y condiciones generales de uso y servicio, contratación, pagos, propiedad intelectual, garantías y legislación aplicable de Bridged Loop Creative Design & Web.">
+
+    <!-- Google Fonts Oficiales: Orbitron, Plus Jakarta Sans, Space Mono & Syne -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="media/logoBLcdw.svg">
+
+    <!-- Estilos del Sistema -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Matter.js Physics & Zero Gravity Suite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="zero-gravity.js"></script>
+
+    <!-- Canvas de Grilla Dinámica a 60 FPS -->
+    <canvas id="cyber-canvas"></canvas>
+    <div class="scanlines-overlay"></div>
+
+    <!-- 1. Floating HUD Navbar -->
+    <header class="hud-navbar" id="hud-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <div class="brand-logo-wrapper">
+                    <img src="media/logobldw.svg" alt="Bridged Loop Logo" class="brand-logo-img">
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li class="nav-item"><a href="index.html" class="glitch-hover">Inicio</a></li>
+                    <li class="nav-item"><a href="nosotros.html" class="glitch-hover">Nosotros</a></li>
+                    <li class="nav-item"><a href="portafolio.html" class="glitch-hover">Portafolio</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="glitch-hover">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="contacto.html" class="cyber-btn cyber-btn-sm cyber-btn-primary">
+                    [ SOLICITAR PROPUESTA ]
+                </a>
+                <button class="mobile-toggle" aria-label="Abrir menú">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Main Content Wrapper -->
+    <main class="main-wrapper">
+
+        <!-- Hero Section Legal -->
+        <section class="section hero-section legal-hero">
+            <div class="container">
+                <div class="legal-hero-content text-center">
+                    <div class="badge-hud mb-3">
+                        <span class="status-dot"></span>
+                        <span>ÚLTIMA ACTUALIZACIÓN: 11 DE SEPTIEMBRE DE 2026</span>
+                    </div>
+
+                    <h1 class="hero-title scramble-text"
+                        data-scramble="TÉRMINOS Y CONDICIONES GENERALES DE USO Y SERVICIO">
+                        TÉRMINOS Y CONDICIONES GENERALES DE USO Y SERVICIO
+                    </h1>
+
+                    <p class="hero-subtitle mx-auto" style="max-width: 860px;">
+                        Bienvenido al sitio web de <strong>Bridged Loop Creative Design &amp; Web</strong> (en adelante,
+                        "Bridged Loop", "nosotros" o "la Agencia"). Al acceder, navegar o utilizar este sitio web, así
+                        como al contratar cualquiera de nuestros servicios de desarrollo digital o diseño de identidad,
+                        usted (el "Usuario" o el "Cliente") acepta estar sujeto a los presentes Términos y Condiciones.
+                        Si no está de acuerdo con alguna parte de estos términos, le rogamos que se abstenga de utilizar
+                        nuestro sitio y servicios.
+                    </p>
+
+                    <!-- Quick Navigation Bar -->
+                    <div class="legal-quick-nav">
+                        <span class="quick-nav-label">&gt; SALTO RÁPIDO:</span>
+                        <a href="#sec-01" class="quick-nav-pill">01. Naturaleza &amp; Uso</a>
+                        <a href="#sec-02" class="quick-nav-pill">02. Propiedad del Sitio</a>
+                        <a href="#sec-03" class="quick-nav-pill">03. Contratación &amp; Pagos</a>
+                        <a href="#sec-04" class="quick-nav-pill">04. Entregables</a>
+                        <a href="#sec-05" class="quick-nav-pill">05. Garantía &amp; Soporte</a>
+                        <a href="#sec-06" class="quick-nav-pill">06. Responsabilidad</a>
+                        <a href="#sec-07" class="quick-nav-pill">07. Datos &amp; Confidencialidad</a>
+                        <a href="#sec-08" class="quick-nav-pill">08. Jurisdicción</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Clauses Section -->
+        <section class="section legal-clauses-section">
+            <div class="container">
+                <div class="legal-content-flow">
+
+                    <!-- Clausula 01 -->
+                    <article class="cyber-card legal-card" id="sec-01">
+                        <div class="card-inner">
+                            <div class="legal-card-header">
+                                <span class="legal-num font-mono">SECCIÓN // 01</span>
+                                <h2 class="legal-title font-orbitron">NATURALEZA DE LOS SERVICIOS Y USO DEL SITIO WEB
+                                </h2>
+                            </div>
+                            <div class="legal-card-body">
+                                <p>
+                                    Bridged Loop es una agencia especializada en el desarrollo de plataformas web,
+                                    interfaces de usuario (UI/UX) y diseño de identidad visual.
+                                </p>
+                                <p>
+                                    El usuario se compromete a hacer un uso lícito y adecuado de este sitio web,
+                                    absteniéndose de introducir código malicioso (virus, troyanos), realizar ataques de
+                                    denegación de servicio (DDoS), o utilizar técnicas de 'scraping' para extraer
+                                    información, código o diseños de nuestra plataforma.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Clausula 02 -->
+                    <article class="cyber-card legal-card" id="sec-02">
+                        <div class="card-inner">
+                            <div class="legal-card-header">
+                                <span class="legal-num font-mono">SECCIÓN // 02</span>
+                                <h2 class="legal-title font-orbitron">PROPIEDAD INTELECTUAL DEL SITIO</h2>
+                            </div>
+                            <div class="legal-card-body">
+                                <p>
+                                    Todo el contenido alojado en este sitio web, incluyendo de manera enunciativa pero
+                                    no limitativa: textos, gráficos, logotipos, código fuente (HTML, CSS, JS),
+                                    animaciones, estructura de navegación y diseño general, es propiedad exclusiva de
+                                    Bridged Loop.
+                                </p>
+                                <div class="terminal-hint-box">
+                                    <span class="text-accent font-mono">[PROHIBICIÓN EXPRESA]</span> Queda estrictamente
+                                    prohibida la reproducción, distribución, modificación o comercialización de dicho
+                                    contenido sin el consentimiento previo y por escrito de la Agencia.
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Clausula 03 -->
+                    <article class="cyber-card legal-card" id="sec-03">
+                        <div class="card-inner">
+                            <div class="legal-card-header">
+                                <span class="legal-num font-mono">SECCIÓN // 03</span>
+                                <h2 class="legal-title font-orbitron">CONTRATACIÓN, PAGOS Y CANCELACIONES</h2>
+                            </div>
+                            <div class="legal-card-body">
+                                <ul class="legal-list">
+                                    <li>
+                                        <strong>3.1. Proceso de Pago:</strong> Salvo que se estipule lo contrario en la
+                                        propuesta técnica o contrato específico, todo proyecto requiere un anticipo del
+                                        <strong>50% (cincuenta por ciento)</strong> para reservar en agenda y comenzar
+                                        la fase de diseño. El 50% restante deberá liquidarse contra entrega del
+                                        proyecto, estrictamente antes de la liberación de contraseñas de administrador o
+                                        de la migración al servidor final del Cliente.
+                                    </li>
+                                    <li>
+                                        <strong>3.2. Cancelaciones:</strong> En caso de que el Cliente decida cancelar
+                                        el proyecto una vez iniciado, el anticipo del 50% tendrá carácter de <strong>NO
+                                            reembolsable</strong>, debido a que se destina a cubrir las horas de
+                                        investigación, planificación, gestión de proyecto y diseño ya ejecutadas hasta
+                                        el momento de la notificación.
+                                    </li>
+                                    <li>
+                                        <strong>3.3. Scope Creep (Alcance del Proyecto):</strong> Los servicios se
+                                        limitan a lo descrito en la cotización inicial. Cualquier sección,
+                                        funcionalidad, animación o revisión adicional que exceda el alcance original
+                                        será documentada y facturada de manera independiente.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Clausula 04 -->
+                    <article class="cyber-card legal-card" id="sec-04">
+                        <div class="card-inner">
+                            <div class="legal-card-header">
+                                <span class="legal-num font-mono">SECCIÓN // 04</span>
+                                <h2 class="legal-title font-orbitron">PROPIEDAD INTELECTUAL DE LOS ENTREGABLES</h2>
+                            </div>
+                            <div class="legal-card-body">
+                                <p>
+                                    Una vez que el Cliente haya liquidado el <strong>100% (cien por ciento)</strong> del
+                                    costo del proyecto, Bridged Loop cederá los derechos patrimoniales sobre los
+                                    archivos finales (vectores del logotipo, manual de marca y código frontend
+                                    desarrollado a medida).
+                                </p>
+                                <p>
+                                    La Agencia retiene sus derechos morales como autor y se reserva el derecho perpetuo
+                                    e irrevocable de mostrar imágenes, enlaces y capturas del proyecto finalizado en su
+                                    portafolio digital, redes sociales y material publicitario con fines estrictamente
+                                    demostrativos.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Clausula 05 -->
+                    <article class="cyber-card legal-card" id="sec-05">
+                        <div class="card-inner">
+                            <div class="legal-card-header">
+                                <span class="legal-num font-mono">SECCIÓN // 05</span>
+                                <h2 class="legal-title font-orbitron">GARANTÍA, SOPORTE Y RESPONSABILIDAD DE TERCEROS
+                                </h2>
+                            </div>
+                            <div class="legal-card-body">
+                                <ul class="legal-list">
+                                    <li>
+                                        <strong>5.1. Garantía Técnica:</strong> Bridged Loop otorga <strong>30 (treinta)
+                                            días naturales de garantía</strong> contados a partir de la entrega final en
+                                        producción. Esta garantía cubre exclusivamente la corrección de errores de
+                                        código (bugs), enlaces rotos o desajustes de visualización en dispositivos
+                                        acordados.
+                                    </li>
+                                    <li>
+                                        <strong>5.2. Mantenimiento:</strong> Concluido el periodo de garantía, cualquier
+                                        solicitud de soporte técnico, actualización de contenido, gestión de servidores
+                                        o instalación de nuevas características requerirá la contratación de una póliza
+                                        de mantenimiento mensual o será cotizada por horas de servicio técnico.
+                                    </li>
+                                    <li>
+                                        <strong>5.3. Exclusiones y Terceros:</strong> La garantía quedará anulada si el
+                                        Cliente o un tercero manipula el código fuente o la configuración del servidor.
+                                        Asimismo, Bridged Loop no es responsable por caídas de servicio derivadas de
+                                        proveedores de hosting ajenos, fallas en pasarelas de pago (Stripe, PayPal,
+                                        Mercado Pago), actualizaciones forzosas de APIs externas (Google, Meta), o
+                                        cambios en las políticas de navegadores web.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Clausula 06 -->
+                    <article class="cyber-card legal-card" id="sec-06">
+                        <div class="card-inner">
+                            <div class="legal-card-header">
+                                <span class="legal-num font-mono">SECCIÓN // 06</span>
+                                <h2 class="legal-title font-orbitron">LIMITACIÓN DE RESPONSABILIDAD</h2>
+                            </div>
+                            <div class="legal-card-body">
+                                <p>
+                                    En la máxima medida permitida por la ley, Bridged Loop no será responsable de ningún
+                                    daño indirecto, incidental, punitivo o consecuente, incluyendo la pérdida de datos,
+                                    pérdida de ingresos, interrupción del negocio o pérdida de oportunidades que surjan
+                                    del uso o la imposibilidad de uso de los sitios web desarrollados.
+                                </p>
+                                <div class="terminal-hint-box">
+                                    <span class="text-accent font-mono">[LÍMITE MÁXIMO]</span> En cualquier caso, la
+                                    responsabilidad total de Bridged Loop frente al Cliente por cualquier reclamación
+                                    derivada de la prestación del servicio estará limitada estrictamente al monto total
+                                    pagado por el Cliente a la Agencia por el proyecto en cuestión.
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Clausula 07 -->
+                    <article class="cyber-card legal-card" id="sec-07">
+                        <div class="card-inner">
+                            <div class="legal-card-header">
+                                <span class="legal-num font-mono">SECCIÓN // 07</span>
+                                <h2 class="legal-title font-orbitron">PROTECCIÓN DE DATOS Y CONFIDENCIALIDAD</h2>
+                            </div>
+                            <div class="legal-card-body">
+                                <p>
+                                    Bridged Loop se compromete a tratar la información personal y comercial del Cliente
+                                    conforme a la <strong>Ley Federal de Protección de Datos Personales en Posesión de
+                                        los Particulares</strong> vigente en México.
+                                </p>
+                                <p>
+                                    Las contraseñas, bases de datos de clientes finales y estrategias comerciales a las
+                                    que la Agencia tenga acceso durante el desarrollo serán manejadas con estricta
+                                    confidencialidad y utilizadas únicamente para la ejecución del proyecto contratado.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Clausula 08 -->
+                    <article class="cyber-card legal-card" id="sec-08">
+                        <div class="card-inner">
+                            <div class="legal-card-header">
+                                <span class="legal-num font-mono">SECCIÓN // 08</span>
+                                <h2 class="legal-title font-orbitron">LEGISLACIÓN APLICABLE Y JURISDICCIÓN</h2>
+                            </div>
+                            <div class="legal-card-body">
+                                <p>
+                                    Para la interpretación, cumplimiento y ejecución de los presentes Términos y
+                                    Condiciones, las partes se someten expresamente a las <strong>leyes federales de
+                                        México</strong> y a la jurisdicción de los <strong>tribunales competentes en la
+                                        ciudad de Guadalajara, Jalisco</strong>, renunciando a cualquier otro fuero que
+                                    pudiera corresponderles en razón de sus domicilios presentes o futuros.
+                                </p>
+                                <div class="legal-contact-callout">
+                                    <div class="callout-heading font-orbitron text-accent">CANALES OFICIALES DE ATENCIÓN
+                                        Y CONTACTO</div>
+                                    <div class="callout-details">
+                                        <div><strong>Correo Electrónico:</strong> <code
+                                                class="text-accent">bridgedloop@gmail.com</code></div>
+                                        <div><strong>Agencia:</strong> Bridged Loop Creative Design &amp; Web</div>
+                                        <div><strong>Jurisdicción:</strong> Guadalajara, Jalisco, México</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Direct to Requirements Panel -->
+        <section class="section" style="padding-top: 1rem;">
+            <div class="container">
+                <div class="cyber-card cta-card">
+                    <div class="card-inner text-center">
+                        <div class="badge-hud mb-3">
+                            <span class="status-dot"></span>
+                            <span>INICIAR PROYECTO CORPORATIVO // CONDICIONES GARANTIZADAS</span>
+                        </div>
+                        <h2 class="cta-card-title font-orbitron scramble-text"
+                            data-scramble="¿LISTO PARA ESCALAR TU ADQUISICIÓN DIGITAL?">
+                            ¿LISTO PARA ESCALAR TU ADQUISICIÓN DIGITAL?
+                        </h2>
+                        <p class="cta-card-desc mx-auto" style="max-width: 650px;">
+                            Ingresa tus requerimientos en nuestro panel interactivo para recibir una propuesta técnica
+                            formal y cotización personalizada en menos de 24 horas hábiles.
+                        </p>
+                        <div class="mt-4">
+                            <a href="contacto.html" class="cyber-btn cyber-btn-lg cyber-btn-primary">
+                                [ ENTRAR AL PANEL DE REQUERIMIENTOS ]
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 3. Footer Global -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo-link" aria-label="Bridged Loop Inicio">
+                        <div class="footer-logo-wrapper">
+                            <img src="media/logobldw.svg" alt="Bridged Loop Logo Oficial" class="footer-logo-img">
+                        </div>
+                    </a>
+                    <p class="footer-brand-desc">
+                        Creative Design &amp; Web. Ingeniería frontend de alta conversión, optimización de velocidad e
+                        identidad corporativa estratégica para empresas.
+                    </p>
+                    <div class="badge-hud footer-badge-hud">
+                        <span class="status-dot"></span>
+                        <span>DISPONIBILIDAD DE SERVICIO // ONLINE</span>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">NAVEGACIÓN</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">» Inicio</a></li>
+                        <li><a href="nosotros.html">» Nosotros</a></li>
+                        <li><a href="portafolio.html">» Portafolio</a></li>
+                        <li><a href="contacto.html">» Contacto</a></li>
+                        <li><a href="terminosycondiciones.html" class="text-accent">» Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">SOLUCIONES</h4>
+                    <ul class="footer-links">
+                        <li><a href="contacto.html">» Landing Pages de Conversión</a></li>
+                        <li><a href="contacto.html">» Identidad Corporativa &amp; Logos</a></li>
+                        <li><a href="contacto.html">» Optimización de Velocidad</a></li>
+                        <li><a href="contacto.html">» Auditoría Técnica CRO</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">CANALES CORPORATIVOS</h4>
+                    <ul class="footer-links">
+                        <li><span class="text-muted">EMAIL:</span> <code
+                                class="text-accent">bridgedloop@gmail.com</code></li>
+                        <li><span class="text-muted">SLA:</span> &lt; 24 HORAS HÁBILES</li>
+                        <li><span class="text-muted">ESTADO:</span> <span class="text-accent">DISPONIBLE PARA
+                                PROYECTOS</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 BRIDGED LOOP CREATIVE DESIGN &amp; WEB. TODOS LOS DERECHOS RESERVADOS.</div>
+                <div><a href="terminosycondiciones.html" class="footer-legal-link text-accent">TÉRMINOS Y
+                        CONDICIONES</a> // CRO &amp; BRANDING</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP & ScrollTrigger Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Script Modular -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>

@@ -17,58 +17,84 @@ document.addEventListener('DOMContentLoaded', () => {
 class TextScramble {
     constructor(el) {
         this.el = el;
-        this.chars = '!<>-_\\/[]{}—=+*^?#________';
+        this.chars = 'QWERTYUIOPASDFGHZXCVBNM0123456789$#%*+~_';
+        this.isAnimating = false;
+        this.targetText = el.getAttribute('data-scramble') || el.innerText.trim();
         this.update = this.update.bind(this);
     }
 
-    setText(newText) {
-        const oldText = this.el.innerText;
-        const length = Math.max(oldText.length, newText.length);
-        const promise = new Promise((resolve) => (this.resolve = resolve));
+    setText(newText, duration = 500) {
+        if (this.isAnimating) return Promise.resolve();
+        this.isAnimating = true;
+
+        const target = newText || this.targetText;
+        this.targetText = target;
+        const length = target.length;
         this.queue = [];
 
         for (let i = 0; i < length; i++) {
-            const from = oldText[i] || '';
-            const to = newText[i] || '';
-            const start = Math.floor(Math.random() * 20);
-            const end = start + Math.floor(Math.random() * 20);
-            this.queue.push({ from, to, start, end });
+            const to = target[i];
+            if (to === ' ' || to === '\n') {
+                this.queue.push({ to, isSpace: true, start: 0, end: 0, char: to });
+            } else {
+                const start = Math.floor(Math.random() * (duration * 0.25));
+                const end = start + Math.floor((duration - start) * (0.6 + Math.random() * 0.4));
+                this.queue.push({
+                    to,
+                    isSpace: false,
+                    start,
+                    end: Math.min(duration, Math.max(end, duration * 0.55)),
+                    char: ''
+                });
+            }
         }
 
         cancelAnimationFrame(this.frameRequest);
-        this.frame = 0;
-        this.update();
-        return promise;
+        this.startTime = performance.now();
+        this.duration = duration;
+
+        return new Promise((resolve) => {
+            this.resolve = resolve;
+            this.update();
+        });
     }
 
     update() {
+        const now = performance.now();
+        const elapsed = now - this.startTime;
         let output = '';
         let complete = 0;
 
-        for (let i = 0, n = this.queue.length; i < n; i++) {
-            let { from, to, start, end, char } = this.queue[i];
+        for (let i = 0; i < this.queue.length; i++) {
+            const item = this.queue[i];
 
-            if (this.frame >= end) {
+            if (item.isSpace) {
+                output += item.to;
                 complete++;
-                output += to;
-            } else if (this.frame >= start) {
-                if (!char || Math.random() < 0.28) {
-                    char = this.randomChar();
-                    this.queue[i].char = char;
+                continue;
+            }
+
+            if (elapsed >= this.duration || elapsed >= item.end) {
+                complete++;
+                output += item.to;
+            } else if (elapsed >= item.start) {
+                if (!item.char || Math.random() < 0.18) {
+                    item.char = this.randomChar();
                 }
-                output += `<span class="scramble-glitch">${char}</span>`;
+                output += `<span class="scramble-glitch">${item.char}</span>`;
             } else {
-                output += from;
+                output += item.to;
             }
         }
 
         this.el.innerHTML = output;
 
-        if (complete === this.queue.length) {
-            this.resolve();
+        if (complete === this.queue.length || elapsed >= this.duration) {
+            this.el.textContent = this.targetText;
+            this.isAnimating = false;
+            if (this.resolve) this.resolve();
         } else {
             this.frameRequest = requestAnimationFrame(this.update);
-            this.frame++;
         }
     }
 
@@ -81,8 +107,21 @@ function initTextScramble() {
     const elements = document.querySelectorAll('[data-scramble]');
     elements.forEach((el) => {
         const fx = new TextScramble(el);
-        const originalText = el.innerText.trim();
-        fx.setText(originalText);
+        const originalText = el.getAttribute('data-scramble') || el.innerText.trim();
+        setTimeout(() => {
+            fx.setText(originalText, 500);
+        }, 150);
+
+        let hoverLock = false;
+        el.addEventListener('mouseenter', () => {
+            if (!hoverLock && !fx.isAnimating) {
+                hoverLock = true;
+                fx.setText(originalText, 500);
+                setTimeout(() => {
+                    hoverLock = false;
+                }, 600);
+            }
+        });
     });
 }
 

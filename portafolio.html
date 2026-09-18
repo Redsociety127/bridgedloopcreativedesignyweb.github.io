@@ -8,11 +8,11 @@
     <meta name="description"
         content="Explora nuestros casos de éxito en desarrollo de landing pages de alta conversión, diseño de identidad corporativa y optimización de infraestructura web.">
 
-    <!-- Google Fonts Oficiales: Orbitron, Plus Jakarta Sans, Space Mono & Syne -->
+    <!-- Google Fonts Oficiales: Poppins, Plus Jakarta Sans, Space Mono & Syne -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Favicon -->
@@ -97,11 +97,183 @@
                     <button class="filter-btn" data-filter="infrastructure">[ INFRAESTRUCTURA &amp; REDISEÑO ]</button>
                 </div>
 
-                <!-- Grid de Proyectos -->
-                <div class="cyber-grid reveal-stagger" id="portfolio-grid">
+                <!-- 1. VISTA RESUMIDA (TODOS LOS PROYECTOS - GRID DE 2 COLUMNAS) -->
+                <div class="portfolio-summary-grid reveal-stagger" id="portfolio-summary-view">
 
-                    <!-- Proyecto 1: Caso de Estudio Cultura Semillas -->
-                    <article class="project-card" data-category="landing" id="showcase-cultura-semillas">
+                    <!-- Resumen 1: Cultura Semillas (Landing CRO) -->
+                    <article class="portfolio-summary-card">
+                        <div class="summary-card-media">
+                            <img src="media/portafolio/cultura-inicio.png" alt="Cultura Semillas - Landing Page"
+                                class="summary-media-img" loading="lazy">
+                            <div class="summary-media-overlay"></div>
+                            <div class="summary-badge-top">
+                                <span class="hud-status-chip">
+                                    <span class="status-dot"></span>
+                                    <span>ACTIVA</span>
+                                </span>
+                                <span class="summary-category-tag font-mono">LANDING PAGES CRO</span>
+                            </div>
+                        </div>
+                        <div class="summary-card-body">
+                            <div class="summary-card-meta font-mono">CASE_STUDY // CS-2026-LIVE</div>
+                            <h3 class="summary-card-title font-orbitron">CULTURA SEMILLAS</h3>
+                            <p class="summary-card-desc">
+                                Plataforma web comunitaria integral y catálogo modular con arquitectura de alta
+                                conversión técnica para difusión cultural en León, Gto.
+                            </p>
+                            <div class="summary-pills-row">
+                                <span class="summary-pill highlight"><span class="pill-dot"></span>Carga &lt; 1.1s</span>
+                                <span class="summary-pill">CRO + UX</span>
+                                <span class="summary-pill">Catálogo Modular</span>
+                                <span class="summary-pill">100% Responsivo</span>
+                            </div>
+                            <div class="summary-card-footer">
+                                <button type="button" class="cyber-btn-cs-primary font-chakra summary-open-btn"
+                                    data-open-filter="landing">
+                                    <span>[ VER CASO COMPLETO ]</span>
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Resumen 2: Identidad Corporativa & Branding -->
+                    <article class="portfolio-summary-card">
+                        <div class="summary-card-media">
+                            <video class="summary-media-video" autoplay muted loop playsinline poster="media/project2.jpg">
+                                <source src="media/Designingbrand.mp4" type="video/mp4">
+                            </video>
+                            <div class="summary-media-overlay"></div>
+                            <div class="summary-badge-top">
+                                <span class="hud-status-chip">
+                                    <span class="status-dot"></span>
+                                    <span>DISPONIBLE</span>
+                                </span>
+                                <span class="summary-category-tag font-mono">IDENTIDAD CORPORATIVA</span>
+                            </div>
+                        </div>
+                        <div class="summary-card-body">
+                            <div class="summary-card-meta font-mono">CASE_STUDY // BRAND-2026-CORE</div>
+                            <h3 class="summary-card-title font-orbitron">BRANDING &amp; IDENTIDAD VISUAL</h3>
+                            <p class="summary-card-desc">
+                                Sistemas de identidad gráfica corporativa: creación de logotipos vectoriales normativos,
+                                selección tipográfica y manuales de marca escalables.
+                            </p>
+                            <div class="summary-pills-row">
+                                <span class="summary-pill highlight"><span class="pill-dot"></span>100% Vectorial</span>
+                                <span class="summary-pill">Manual Normativo</span>
+                                <span class="summary-pill">Escalabilidad Total</span>
+                                <span class="summary-pill">Multiplataforma</span>
+                            </div>
+                            <div class="summary-card-footer">
+                                <button type="button" class="cyber-btn-cs-primary font-chakra summary-open-btn"
+                                    data-open-filter="branding">
+                                    <span>[ VER CASO COMPLETO ]</span>
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Resumen 3: Infraestructura Web & Auditoría CRO -->
+                    <article class="portfolio-summary-card">
+                        <div class="summary-card-media">
+                            <video class="summary-media-video" autoplay muted loop playsinline poster="media/project1.jpg">
+                                <source src="media/Coding_website.mp4" type="video/mp4">
+                            </video>
+                            <div class="summary-media-overlay"></div>
+                            <div class="summary-badge-top">
+                                <span class="hud-status-chip">
+                                    <span class="status-dot"></span>
+                                    <span>OPTIMIZADO</span>
+                                </span>
+                                <span class="summary-category-tag font-mono">INFRAESTRUCTURA &amp; REDISEÑO</span>
+                            </div>
+                        </div>
+                        <div class="summary-card-body">
+                            <div class="summary-card-meta font-mono">CASE_STUDY // INFRA-2026-PROD</div>
+                            <h3 class="summary-card-title font-orbitron">INFRAESTRUCTURA &amp; AUDITORÍA CRO</h3>
+                            <p class="summary-card-desc">
+                                Reingeniería de código, aceleración extrema de Core Web Vitals, reducción de tasas de
+                                rebote y modernización de interfaces para máxima conversión.
+                            </p>
+                            <div class="summary-pills-row">
+                                <span class="summary-pill highlight"><span class="pill-dot"></span>Performance 99+</span>
+                                <span class="summary-pill">SEO Técnico</span>
+                                <span class="summary-pill">Core Web Vitals</span>
+                                <span class="summary-pill">Frontend Moderno</span>
+                            </div>
+                            <div class="summary-card-footer">
+                                <button type="button" class="cyber-btn-cs-primary font-chakra summary-open-btn"
+                                    data-open-filter="infrastructure">
+                                    <span>[ VER CASO COMPLETO ]</span>
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Resumen 4: Soluciones a Medida & Nuevos Proyectos -->
+                    <article class="portfolio-summary-card">
+                        <div class="summary-card-media">
+                            <div class="custom-project-art">
+                                <div class="custom-art-symbol font-orbitron">BL</div>
+                                <span class="custom-art-label font-mono">// DESARROLLO A MEDIDA //</span>
+                            </div>
+                            <div class="summary-badge-top">
+                                <span class="hud-status-chip">
+                                    <span class="status-dot"></span>
+                                    <span>ONLINE</span>
+                                </span>
+                                <span class="summary-category-tag font-mono">NUEVO PROYECTO</span>
+                            </div>
+                        </div>
+                        <div class="summary-card-body">
+                            <div class="summary-card-meta font-mono">CUSTOM_DEVELOPMENT // ON_DEMAND</div>
+                            <h3 class="summary-card-title font-orbitron">TU PRÓXIMO CASO DE ÉXITO</h3>
+                            <p class="summary-card-desc">
+                                Desarrollo frontend a medida, landing pages con embudos de alta conversión o identidad de
+                                marca estratégica diseñada específicamente para tu empresa.
+                            </p>
+                            <div class="summary-pills-row">
+                                <span class="summary-pill highlight"><span class="pill-dot"></span>SLA &lt; 24h</span>
+                                <span class="summary-pill">Desarrollo a Medida</span>
+                                <span class="summary-pill">Asesoría Directa</span>
+                                <span class="summary-pill">Garantía Técnica</span>
+                            </div>
+                            <div class="summary-card-footer">
+                                <a href="contacto.html" class="cyber-btn-cs-primary font-chakra summary-open-btn">
+                                    <span>[ INICIAR TU PROYECTO ]</span>
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- 2. VISTAS COMPLETAS POR CATEGORÍA (DETALLE SHOWCASE MODULAR) -->
+                <div class="portfolio-detailed-view" id="portfolio-detailed-view">
+
+                    <!-- Detalle Proyecto 1: Landing Pages CRO (Cultura Semillas) -->
+                    <article class="project-card project-detail-card" data-category="landing"
+                        id="showcase-cultura-semillas">
                         <div class="container">
 
                             <!-- Header del Caso de Estudio -->
@@ -329,14 +501,200 @@
                         </div>
                     </article>
 
-                    <!-- Proyecto 2: Identidad Corporativa -->
-                    <article class="project-card" data-category="branding">
+                    <!-- Detalle Proyecto 2: Identidad Corporativa & Branding -->
+                    <article class="project-card project-detail-card" data-category="branding" id="showcase-branding">
+                        <div class="container">
 
+                            <!-- Header del Caso de Estudio -->
+                            <div class="showcase-header-tag">
+                                <span class="hud-status-chip">
+                                    <span class="status-dot"></span>
+                                    <span>DISPONIBLE</span>
+                                </span>
+                                <span class="showcase-id-badge">CASE_STUDY // ID: BRAND-2026-CORE</span>
+                            </div>
+
+                            <div class="showcase-modular-container">
+
+                                <!-- Ficha Técnica Lateral / Header -->
+                                <aside class="showcase-sidebar">
+                                    <div class="showcase-client-meta">
+                                        <span class="client-badge-label">SISTEMA DE IDENTIDAD DE MARCA</span>
+                                        <h2 class="showcase-title font-orbitron">IDENTIDAD CORPORATIVA &amp; LOGOS</h2>
+                                        <p class="showcase-field-tag">
+                                            <strong>GIRO:</strong> Creación de sistemas de identidad corporativa para
+                                            empresas que buscan proyectar autoridad indiscutible en medios impresos,
+                                            digitales y audiovisuales.
+                                        </p>
+                                    </div>
+
+                                    <!-- Solución Implementada -->
+                                    <div class="showcase-brief">
+                                        <h4 class="showcase-subheading font-chakra">SOLUCIÓN IMPLEMENTADA</h4>
+                                        <p>
+                                            Construcción geométrica de logotipos vectoriales de alta precisión, selección
+                                            tipográfica con contraste jerárquico, paleta cromática HSL y manual
+                                            normativo de marca.
+                                        </p>
+                                    </div>
+
+                                    <!-- Resultados & Telemetría -->
+                                    <div class="showcase-telemetry-grid">
+                                        <div class="telemetry-item">
+                                            <span class="telemetry-label">PRECISIÓN GRÁFICA</span>
+                                            <span class="telemetry-value font-orbitron highlight-green">100% SVG</span>
+                                            <span class="telemetry-sub">Escalabilidad Vectorial Pura</span>
+                                        </div>
+                                        <div class="telemetry-item">
+                                            <span class="telemetry-label">NORMATIVA</span>
+                                            <span class="telemetry-value font-orbitron">COMPLETA</span>
+                                            <span class="telemetry-sub">Manual de Marca &amp; Reglas</span>
+                                        </div>
+                                        <div class="telemetry-item">
+                                            <span class="telemetry-label">SISTEMA TIPOGRÁFICO</span>
+                                            <span class="telemetry-value font-orbitron">DUAL UI</span>
+                                            <span class="telemetry-sub">Display + Body Legible</span>
+                                        </div>
+                                        <div class="telemetry-item">
+                                            <span class="telemetry-label">DISPONIBILIDAD</span>
+                                            <span class="telemetry-value font-orbitron highlight-green">ACTIVO</span>
+                                            <span class="telemetry-sub">Cotización y Asesoría</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Botón de Acción -->
+                                    <div class="showcase-action-wrapper">
+                                        <a href="contacto.html" class="cyber-btn-cs-primary font-chakra">
+                                            <span>[ INICIAR PROYECTO DE BRANDING ]</span>
+                                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </aside>
+
+                                <!-- Viewport Showcase Visual -->
+                                <div class="showcase-viewport-wrapper">
+                                    <div class="showcase-monitor-frame">
+                                        <div class="slide-media-container">
+                                            <video class="slide-img" autoplay muted loop playsinline
+                                                poster="media/project2.jpg">
+                                                <source src="media/Designingbrand.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                        <div class="slide-caption-bar">
+                                            <div class="caption-title font-chakra">SISTEMA DE IDENTIDAD // PROCESO DE
+                                                DISEÑO ESTRUCTURAL</div>
+                                            <div class="caption-desc">Metodología de diseño normativo para logotipos y
+                                                sistemas visuales escalables a cualquier soporte digital o físico.</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </article>
 
-                    <!-- Proyecto 3: Rediseño & Optimización -->
-                    <article class="project-card" data-category="infrastructure">
+                    <!-- Detalle Proyecto 3: Infraestructura Web & Optimización -->
+                    <article class="project-card project-detail-card" data-category="infrastructure"
+                        id="showcase-infrastructure">
+                        <div class="container">
 
+                            <!-- Header del Caso de Estudio -->
+                            <div class="showcase-header-tag">
+                                <span class="hud-status-chip">
+                                    <span class="status-dot"></span>
+                                    <span>OPTIMIZADO</span>
+                                </span>
+                                <span class="showcase-id-badge">CASE_STUDY // ID: INFRA-2026-PROD</span>
+                            </div>
+
+                            <div class="showcase-modular-container">
+
+                                <!-- Ficha Técnica Lateral / Header -->
+                                <aside class="showcase-sidebar">
+                                    <div class="showcase-client-meta">
+                                        <span class="client-badge-label">INGENIERÍA FRONTEND &amp; RENDIMIENTO</span>
+                                        <h2 class="showcase-title font-orbitron">INFRAESTRUCTURA &amp; AUDITORÍA CRO</h2>
+                                        <p class="showcase-field-tag">
+                                            <strong>GIRO:</strong> Reingeniería técnica de código y modernización de
+                                            interfaces para plataformas empresariales con tiempos de carga lentos o alta
+                                            tasa de rebote.
+                                        </p>
+                                    </div>
+
+                                    <!-- Solución Implementada -->
+                                    <div class="showcase-brief">
+                                        <h4 class="showcase-subheading font-chakra">SOLUCIÓN IMPLEMENTADA</h4>
+                                        <p>
+                                            Migración hacia código nativo ultra ligero, eliminación de dependencias
+                                            innecesarias, optimización de Core Web Vitals y diseño de embudos de alta
+                                            conversión.
+                                        </p>
+                                    </div>
+
+                                    <!-- Resultados & Telemetría -->
+                                    <div class="showcase-telemetry-grid">
+                                        <div class="telemetry-item">
+                                            <span class="telemetry-label">CORE WEB VITALS</span>
+                                            <span class="telemetry-value font-orbitron highlight-green">SCORE 99+</span>
+                                            <span class="telemetry-sub">Rendimiento Google PageSpeed</span>
+                                        </div>
+                                        <div class="telemetry-item">
+                                            <span class="telemetry-label">TIEMPO DE RESPUESTA</span>
+                                            <span class="telemetry-value font-orbitron">&lt; 0.9s</span>
+                                            <span class="telemetry-sub">FCP &amp; LCP Instantáneos</span>
+                                        </div>
+                                        <div class="telemetry-item">
+                                            <span class="telemetry-label">TASA DE REBOTE</span>
+                                            <span class="telemetry-value font-orbitron">-42%</span>
+                                            <span class="telemetry-sub">Mayor Tiempo de Sesión</span>
+                                        </div>
+                                        <div class="telemetry-item">
+                                            <span class="telemetry-label">ESTADO DE SERVICIO</span>
+                                            <span class="telemetry-value font-orbitron highlight-green">ONLINE</span>
+                                            <span class="telemetry-sub">Auditorías Disponibles</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Botón de Acción -->
+                                    <div class="showcase-action-wrapper">
+                                        <a href="contacto.html" class="cyber-btn-cs-primary font-chakra">
+                                            <span>[ SOLICITAR AUDITORÍA CRO ]</span>
+                                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </aside>
+
+                                <!-- Viewport Showcase Visual -->
+                                <div class="showcase-viewport-wrapper">
+                                    <div class="showcase-monitor-frame">
+                                        <div class="slide-media-container">
+                                            <video class="slide-img" autoplay muted loop playsinline
+                                                poster="media/project1.jpg">
+                                                <source src="media/Coding_website.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                        <div class="slide-caption-bar">
+                                            <div class="caption-title font-chakra">DESARROLLO EN TIEMPO REAL // CÓDIGO
+                                                LIMPIO &amp; MODULAR</div>
+                                            <div class="caption-desc">Arquitectura frontend orientada a performance
+                                                extremo, minimización de peticiones HTTP y adaptabilidad multipantalla.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </article>
 
                 </div>
@@ -389,7 +747,7 @@
                         </div>
                     </a>
                     <p class="footer-brand-desc">
-                        Creative Design &amp; Web. Ingeniería frontend de alta conversión, optimización de velocidad e
+                        Web &amp; Creative Design. Ingeniería frontend de alta conversión, optimización de velocidad e
                         identidad corporativa estratégica para empresas.
                     </p>
                     <div class="badge-hud footer-badge-hud">

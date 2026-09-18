@@ -80,62 +80,91 @@ document.addEventListener('DOMContentLoaded', () => {
   const audioSynth = new CyberAudioSynth();
 
   // ==========================================================================
-  // 2. TEXT SCRAMBLE DECODER EFFECT (Matrix Decryption Microinteraction)
+  // 2. TEXT SCRAMBLE DECODER EFFECT (2s exactos, sin distorsión de layout)
   // ==========================================================================
   class TextScramble {
     constructor(el) {
       this.el = el;
-      this.chars = '!<>-_\\/[]{}—=+*^?#________0101';
+      this.chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#%*+~_';
+      this.isAnimating = false;
+      this.targetText = el.getAttribute('data-scramble') || el.innerText.trim();
       this.update = this.update.bind(this);
     }
 
-    setText(newText) {
-      const oldText = this.el.innerText;
-      const length = Math.max(oldText.length, newText.length);
-      const promise = new Promise((resolve) => (this.resolve = resolve));
+    setText(newText, duration = 2000) {
+      if (this.isAnimating) return Promise.resolve();
+      this.isAnimating = true;
+
+      const target = newText || this.targetText;
+      this.targetText = target;
+      const length = target.length;
       this.queue = [];
 
       for (let i = 0; i < length; i++) {
-        const from = oldText[i] || '';
-        const to = newText[i] || '';
-        const start = Math.floor(Math.random() * 20);
-        const end = start + Math.floor(Math.random() * 20);
-        this.queue.push({ from, to, start, end });
+        const to = target[i];
+        if (to === ' ' || to === '\n') {
+          // Los espacios y saltos de línea se preservan estrictamente para no alterar el ancho ni el flujo de palabras
+          this.queue.push({ to, isSpace: true, start: 0, end: 0, char: to });
+        } else {
+          // Distribución temporal dentro de los 2000ms (2.0 segundos)
+          const start = Math.floor(Math.random() * (duration * 0.35));
+          const end = start + Math.floor((duration - start) * (0.6 + Math.random() * 0.4));
+          this.queue.push({
+            to,
+            isSpace: false,
+            start,
+            end: Math.min(duration, Math.max(end, duration * 0.75)),
+            char: ''
+          });
+        }
       }
 
       cancelAnimationFrame(this.frameRequest);
-      this.frame = 0;
-      this.update();
-      return promise;
+      this.startTime = performance.now();
+      this.duration = duration;
+
+      return new Promise((resolve) => {
+        this.resolve = resolve;
+        this.update();
+      });
     }
 
     update() {
+      const now = performance.now();
+      const elapsed = now - this.startTime;
       let output = '';
       let complete = 0;
 
-      for (let i = 0, n = this.queue.length; i < n; i++) {
-        let { from, to, start, end, char } = this.queue[i];
-        if (this.frame >= end) {
+      for (let i = 0; i < this.queue.length; i++) {
+        const item = this.queue[i];
+
+        if (item.isSpace) {
+          output += item.to;
           complete++;
-          output += to;
-        } else if (this.frame >= start) {
-          if (!char || Math.random() < 0.28) {
-            char = this.randomChar();
-            this.queue[i].char = char;
+          continue;
+        }
+
+        if (elapsed >= this.duration || elapsed >= item.end) {
+          complete++;
+          output += item.to;
+        } else if (elapsed >= item.start) {
+          if (!item.char || Math.random() < 0.28) {
+            item.char = this.randomChar();
           }
-          output += `<span class="scramble-char">${char}</span>`;
+          output += `<span class="scramble-char">${item.char}</span>`;
         } else {
-          output += from;
+          output += item.to;
         }
       }
 
       this.el.innerHTML = output;
 
-      if (complete === this.queue.length) {
-        this.resolve();
+      if (complete === this.queue.length || elapsed >= this.duration) {
+        this.el.textContent = this.targetText;
+        this.isAnimating = false;
+        if (this.resolve) this.resolve();
       } else {
         this.frameRequest = requestAnimationFrame(this.update);
-        this.frame++;
       }
     }
 
@@ -148,12 +177,22 @@ document.addEventListener('DOMContentLoaded', () => {
   scrambleElements.forEach((el) => {
     const fx = new TextScramble(el);
     const targetText = el.getAttribute('data-scramble') || el.innerText.trim();
+
+    // Ejecución inicial de 2 segundos exactos
     setTimeout(() => {
-      fx.setText(targetText);
+      fx.setText(targetText, 2000);
     }, 250);
 
+    // Activación al pasar el puntero: dura exactamente 2 segundos sin bucle infinito
+    let hoverLock = false;
     el.addEventListener('mouseenter', () => {
-      fx.setText(targetText);
+      if (!hoverLock && !fx.isAnimating) {
+        hoverLock = true;
+        fx.setText(targetText, 2000);
+        setTimeout(() => {
+          hoverLock = false;
+        }, 2200);
+      }
     });
   });
 
@@ -192,8 +231,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const gridSize = 45;
       offset = (offset + 0.35) % gridSize;
 
-      // Líneas de grilla sutiles
-      ctx.strokeStyle = 'rgba(11, 38, 71, 0.35)';
+      // Líneas de grilla conceptuales sutiles
+      ctx.strokeStyle = 'rgba(10, 10, 10, 0.035)';
       ctx.lineWidth = 1;
 
       for (let x = 0; x <= width; x += gridSize) {
@@ -210,9 +249,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.stroke();
       }
 
-      // Partículas creativas de energía (Coral Naranja)
-      const particleRgb = '255, 127, 50';
-      const particleShadow = '#ff7f32';
+      // Partículas conceptuales cálidas de acento
+      const particleRgb = '233, 112, 51';
+      const particleShadow = 'rgba(233, 112, 51, 0.35)';
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
@@ -224,9 +263,9 @@ document.addEventListener('DOMContentLoaded', () => {
           p.x = Math.random() * width;
         }
 
-        ctx.fillStyle = `rgba(${particleRgb}, ${p.opacity})`;
+        ctx.fillStyle = `rgba(${particleRgb}, ${p.opacity * 0.7})`;
         ctx.shadowColor = particleShadow;
-        ctx.shadowBlur = 6;
+        ctx.shadowBlur = 4;
         ctx.fillRect(p.x, p.y, p.size, p.size);
         ctx.shadowBlur = 0;
       }
@@ -401,30 +440,78 @@ document.addEventListener('DOMContentLoaded', () => {
   // 7. PORTFOLIO FILTERING SYSTEM (`portafolio.html`)
   // ==========================================================================
   const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  const summaryView = document.getElementById('portfolio-summary-view');
+  const detailCards = document.querySelectorAll('.project-detail-card');
+  const summaryOpenBtns = document.querySelectorAll('[data-open-filter]');
 
-  if (filterButtons.length > 0 && projectCards.length > 0) {
+  function applyPortfolioFilter(targetCategory, smoothScroll = false) {
+    // Actualizar estado visual de los botones de filtro
+    filterButtons.forEach((b) => {
+      const isMatch = b.getAttribute('data-filter') === targetCategory;
+      b.classList.toggle('active', isMatch);
+    });
+
+    if (targetCategory === 'all') {
+      // Ocultar tarjetas de detalle completo
+      detailCards.forEach((card) => {
+        card.style.display = 'none';
+      });
+
+      // Mostrar grid resumido de 2 columnas con transición
+      if (summaryView) {
+        summaryView.style.display = 'grid';
+        summaryView.style.opacity = '0';
+        setTimeout(() => {
+          summaryView.style.transition = 'opacity 0.25s ease';
+          summaryView.style.opacity = '1';
+        }, 30);
+      }
+    } else {
+      // Ocultar grid resumido
+      if (summaryView) {
+        summaryView.style.display = 'none';
+      }
+
+      // Mostrar la tarjeta de detalle de la categoría seleccionada
+      detailCards.forEach((card) => {
+        const cardCategory = card.getAttribute('data-category');
+        if (cardCategory === targetCategory) {
+          card.style.display = 'block';
+          card.style.opacity = '0';
+          setTimeout(() => {
+            card.style.transition = 'opacity 0.25s ease';
+            card.style.opacity = '1';
+          }, 30);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    if (smoothScroll) {
+      const filterSection = document.querySelector('.portfolio-filters');
+      if (filterSection) {
+        filterSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }
+
+  if (filterButtons.length > 0) {
     filterButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
-        filterButtons.forEach((b) => b.classList.remove('active'));
-        btn.classList.add('active');
         audioSynth.playKeyClick();
-
         const targetCategory = btn.getAttribute('data-filter');
+        applyPortfolioFilter(targetCategory, false);
+      });
+    });
 
-        projectCards.forEach((card) => {
-          const cardCategory = card.getAttribute('data-category');
-          if (targetCategory === 'all' || cardCategory === targetCategory) {
-            card.style.display = 'flex';
-            card.style.opacity = '0';
-            setTimeout(() => {
-              card.style.transition = 'opacity 0.25s ease';
-              card.style.opacity = '1';
-            }, 30);
-          } else {
-            card.style.display = 'none';
-          }
-        });
+    summaryOpenBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        audioSynth.playKeyClick();
+        const targetCategory = btn.getAttribute('data-open-filter');
+        if (targetCategory) {
+          applyPortfolioFilter(targetCategory, true);
+        }
       });
     });
   }
@@ -438,7 +525,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     gsap.utils.toArray('.reveal-stagger').forEach((section) => {
-      const items = section.querySelectorAll('.cyber-card, .project-card, .stat-matrix-card, .team-card');
+      const items = section.querySelectorAll('.cyber-card, .project-card, .portfolio-summary-card, .stat-matrix-card, .team-card');
       if (items.length > 0) {
         gsap.fromTo(items, 
           { opacity: 0, y: 30 },
@@ -653,7 +740,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     requestAnimationFrame(renderCursor);
 
-    const interactiveSelector = 'a, button, input, textarea, select, .project-card, .cs-tab-btn, .hud-nav-btn, .filter-btn, .cyber-btn, .nav-item, .card-tilt, #gravity-toggle-btn, #whatsapp-float-btn';
+    const interactiveSelector = 'a, button, input, textarea, select, .project-card, .portfolio-summary-card, .summary-open-btn, .cs-tab-btn, .hud-nav-btn, .filter-btn, .cyber-btn, .nav-item, .card-tilt, #gravity-toggle-btn, #whatsapp-float-btn';
 
     document.addEventListener('mouseover', (e) => {
       if (e.target.closest(interactiveSelector)) {

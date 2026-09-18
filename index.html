@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BRIDGED LOOP CREATIVE DESIGN & WEB</title>
+    <title>BRIDGED LOOP | CREATIVE DESIGN & WEB</title>
     <meta name="description"
         content="Agencia digital especializada en dos servicios núcleo: Desarrollo de Landing Pages de Alta Conversión y Creación de Logotipos / Branding Estratégico.">
 
@@ -20,6 +20,9 @@
 
     <!-- Estilos del Sistema -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Model Viewer (Renderizado 3D Interactivo) -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 </head>
 
 <body>
@@ -112,6 +115,48 @@
                         <div class="telemetry-item">
                             <span class="telemetry-label">TASA DE RETENCIÓN PROMEDIO</span>
                             <span class="telemetry-value">+45%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elemento 3D Interactivo (Stag and Friends) -->
+                <div class="hero-3d-wrapper">
+                    <div class="hero-3d-card">
+                        <div class="hero-3d-header">
+                            <div class="badge-hud">
+                                <span class="status-dot"></span>
+                                <span>RENDER 3D // INTERACTIVO</span>
+                            </div>
+                            <span class="hero-3d-tag font-mono">[ 3D_VIEWPORT ]</span>
+                        </div>
+                        <model-viewer
+                            id="hero-3d-model"
+                            src="media/stag_and_friends_original.glb"
+                            alt="Modelo 3D Stag and Friends"
+                            auto-rotate
+                            rotation-per-second="20deg"
+                            camera-controls
+                            bounds="tight"
+                            camera-orbit="auto auto auto"
+                            camera-target="auto auto auto"
+                            field-of-view="auto"
+                            shadow-intensity="1.5"
+                            shadow-softness="0.6"
+                            exposure="1.3"
+                            environment-image="neutral"
+                            touch-action="pan-y"
+                            interaction-prompt="auto"
+                            loading="eager"
+                            reveal="auto"
+                            class="hero-model-viewer">
+                            <div class="model-loading-slot" slot="poster">
+                                <div class="model-spinner"></div>
+                                <span class="font-mono">CARGANDO MODELO 3D...</span>
+                            </div>
+                        </model-viewer>
+                        <div class="hero-3d-footer font-mono">
+                            <span>ARRASTRA PARA ROTAR // ZOOM ACTIVO</span>
+                            <span class="text-accent">60 FPS</span>
                         </div>
                     </div>
                 </div>

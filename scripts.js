@@ -740,7 +740,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     requestAnimationFrame(renderCursor);
 
-    const interactiveSelector = 'a, button, input, textarea, select, .project-card, .portfolio-summary-card, .summary-open-btn, .cs-tab-btn, .hud-nav-btn, .filter-btn, .cyber-btn, .nav-item, .card-tilt, #gravity-toggle-btn, #whatsapp-float-btn';
+    const interactiveSelector = 'a, button, input, textarea, select, model-viewer, .hero-3d-card, .project-card, .portfolio-summary-card, .summary-open-btn, .cs-tab-btn, .hud-nav-btn, .filter-btn, .cyber-btn, .nav-item, .card-tilt, #gravity-toggle-btn, #whatsapp-float-btn';
 
     document.addEventListener('mouseover', (e) => {
       if (e.target.closest(interactiveSelector)) {
@@ -805,5 +805,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   createWhatsAppButton();
+
+  // ==========================================================================
+  // 13. HERO 3D MODEL VIEWER SETUP
+  // ==========================================================================
+  const hero3dModel = document.getElementById('hero-3d-model');
+  if (hero3dModel) {
+    hero3dModel.addEventListener('load', () => {
+      hero3dModel.dismissPoster?.();
+    });
+  }
 });
 

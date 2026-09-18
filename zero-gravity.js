@@ -130,6 +130,8 @@ function getTargetElements() {
         // --- 1. Módulos, Tarjetas y Estructuras Autónomas ---
         '.cyber-card',
         '.project-card',
+        '.portfolio-summary-card',
+        '.hero-3d-card',
         '.stat-matrix-card',
         '.legal-card',
         '.cta-card',

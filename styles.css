@@ -776,6 +776,102 @@ nav a,
     color: var(--accent-fire) !important;
 }
 
+/* --- 8.1 HERO 3D VIEWPORT (Stag & Friends) --- */
+.hero-3d-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-3d-card {
+    width: 100%;
+    max-width: 520px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sculptural);
+    padding: 1.4rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hero-3d-card:hover {
+    border-color: var(--accent-fire);
+    box-shadow: 0 20px 45px -15px rgba(233, 112, 51, 0.2);
+}
+
+.hero-3d-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.hero-3d-tag {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.hero-model-viewer {
+    width: 100%;
+    height: 420px;
+    background: radial-gradient(circle at 50% 50%, #222222 0%, #0E0E0E 100%);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-lg);
+    outline: none;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    --poster-color: transparent;
+}
+
+.model-loading-slot {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--accent-fire);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    background: #111111;
+}
+
+.model-spinner {
+    width: 38px;
+    height: 38px;
+    border: 3px solid rgba(233, 112, 51, 0.2);
+    border-top-color: var(--accent-fire);
+    border-radius: 50%;
+    animation: spinModel 0.8s linear infinite;
+}
+
+@keyframes spinModel {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hero-3d-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border-subtle);
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+
 /* --- 9. GRID & SOFT-BRUTALISM CARDS --- */
 .cyber-grid {
     display: grid;

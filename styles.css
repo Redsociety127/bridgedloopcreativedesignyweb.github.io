@@ -465,6 +465,14 @@ nav a,
     width: 100%;
 }
 
+.nav-item-cta {
+    display: none;
+}
+
+.nav-item-cta .cyber-btn::after {
+    display: none;
+}
+
 /* Nav Actions & Badges */
 .nav-actions {
     display: flex;
@@ -2388,6 +2396,24 @@ video,
 
     .nav-links.mobile-active {
         display: flex;
+    }
+
+    .nav-actions > .cyber-btn {
+        display: none;
+    }
+
+    .nav-item-cta {
+        display: block;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .nav-item-cta .cyber-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 0.85rem 1.2rem;
     }
 
     .mobile-toggle {

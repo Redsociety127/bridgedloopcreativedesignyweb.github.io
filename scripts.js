@@ -434,6 +434,12 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.toggle('mobile-active');
       audioSynth.playKeyClick();
     });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-active');
+      });
+    });
   }
 
   // ==========================================================================
